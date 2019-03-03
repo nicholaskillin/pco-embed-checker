@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>CarlsbadSite</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<html lang="en">
+  <%= render 'layouts/head' %>
+  <%= render 'layouts/header'%>
 
   <body>
-    <%= yield %>
+    <div class="grid-container full">
+      <div class="grid-x grid-margin-x">
+        <div class="cell small-3" id="side-nav">
+          <ul class="side-nav">
+            <li><a href="#">Link 1</a></li>
+          </ul>
+        </div>
+        <div class="cell small-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
