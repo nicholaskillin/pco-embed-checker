@@ -4,4 +4,7 @@ class WidgetsController < ApplicationController
     @widget = Widget.find(params[:id])
   end
 
+  def index
+  end
+
 end
