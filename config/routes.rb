@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   get 'users/new'
-  root 'static_pages#home'
+  root 'widgets#index'
   resources :widgets
   
 end
