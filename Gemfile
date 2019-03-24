@@ -43,6 +43,9 @@ gem 'figaro'
 gem 'devise'
 gem 'omniauth-oauth2'
 
+# Password Encryption
+gem 'bcrypt'
+
 # CSS library
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.3'
