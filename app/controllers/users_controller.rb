@@ -6,6 +6,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "Welcome to Carlsbad Church."
+      redirect_to root_url
+    else
+      flash[:danger] = "Your account was not created"
+    end
+
   end
 
   private
