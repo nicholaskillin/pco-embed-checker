@@ -1,10 +1,23 @@
-<%= form_for(@widget) do |f| %>
+<form>
+  <h3>Create a new widget</h3>
+  <%= form_for(@widget) do |f| %>
 
-  <%= f.label "Name" %>
-  <%= f.text_field :name %>
+    <div class="form-group">
+      <%= f.label "Name" %>
+      <%= f.text_field :name, class: "form-control" %>
+      <small id="passwordHelpBlock" class="form-text text-muted">
+        Enter the name of your widget.
+      </small>
+    </div>
 
-  <%= f.label "Code" %>
-  <%= f.text_area :code %>
-  
-  <%= f.submit %>
-<% end %>
+    <div class="form-group">
+      <%= f.label "Code" %>
+      <%= f.text_area :code, class: "form-control" %>
+      <small id="passwordHelpBlock" class="form-text text-muted">
+        Enter the code copied from Resources here.
+      </small>
+    </div>
+    
+    <%= f.submit 'Create Widget', class: "btn btn-primary" %>
+  <% end %>
+</form>
