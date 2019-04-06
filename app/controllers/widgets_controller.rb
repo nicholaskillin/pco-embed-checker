@@ -1,7 +1,7 @@
 class WidgetsController < ApplicationController
 
   def index
-    @widget = Widget.new()
+    @widget = Widget.new
   end
   
   def create
