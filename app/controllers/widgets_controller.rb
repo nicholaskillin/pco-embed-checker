@@ -10,8 +10,7 @@ class WidgetsController < ApplicationController
       flash[:success] = "New widget created."
       redirect_to root_url
     else
-      flash[:danger] = "There was a problem."
-      redirect_to root_url
+      render :index
     end
   end
 
