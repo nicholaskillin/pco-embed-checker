@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app created for the wonderful team at Planning Center. It's aimed at the support team and would give them a place where they can add forms, widgets and giving modals to a website outside of the Planning Center apps for testing purposes.
 
-Things you may want to cover:
+##About the app
 
-* Ruby version
+It's running on Ruby 2.6.1 with Rails 5.2.2.
 
-* System dependencies
+##Installation
 
-* Configuration
+You can get started by cloning this repo using:
 
-* Database creation
+  git clone https://github.com/nicholaskillin/carlsbad_site.git
 
-* Database initialization
+Change directory to the new app
 
-* How to run the test suite
+  cd carlsbad_site
 
-* Services (job queues, cache servers, search engines, etc.)
+Setup your database and run
 
-* Deployment instructions
+  bundle install
+  rails s
 
-* ...
+and you should be up and running.
