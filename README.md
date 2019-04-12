@@ -10,15 +10,15 @@ It's running on Ruby 2.6.1 with Rails 5.2.2.
 
 You can get started by cloning this repo using:
 
-  ```git clone https://github.com/nicholaskillin/carlsbad_site.git```
+    git clone https://github.com/nicholaskillin/carlsbad_site.git
 
 Change directory to the new app
 
-  ```cd carlsbad_site```
+    cd carlsbad_site
 
 Setup your database and run
 
-  ```bundle install```
-  ```rails s```
+    bundle install
+    rails s
 
 and you should be up and running.
