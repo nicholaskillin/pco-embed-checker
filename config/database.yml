@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: carlsbad_site_production
-  username: carlsbad_site
-  password: <%= ENV['CARLSBAD_SITE_DATABASE_PASSWORD'] %>
+  database: ENV['DATABASE_URL']
+  username: ENV['CLEARDB_DATABASE_USERNAME']
+  password: ENV['CLEARDB_DATABASE_PASSWORDs']
