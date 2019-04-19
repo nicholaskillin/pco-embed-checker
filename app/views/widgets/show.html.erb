@@ -1,9 +1,11 @@
 <div class="row">
   <%= render 'shared/widget_side_nav' %>
   <div class="col-sm-8">
-    <ul>
-      <li>Widget Name: <%= @widget_current.name %></li>
-      <li>Widget Code: <%=  @widget_current.code %></li>
-    </ul>
+    <div class="row">
+      <h1><%= @widget_current.name %></h1>
+    </div>
+    <div class="row">
+      Widget Code: <%=  @widget_current.code %>
+    </div>
   </div>
 </div>

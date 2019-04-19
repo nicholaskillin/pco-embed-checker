@@ -9,7 +9,7 @@ class WidgetsController < ApplicationController
     @widget = current_user.widgets.build(widget_params)
     if @widget.save
       flash[:success] = "New widget created."
-      redirect_to root_url
+      redirect_to @widget
     else
       render :index
     end
