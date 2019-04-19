@@ -19,4 +19,9 @@ class User < ApplicationRecord
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
+  # Returns a list of the users widgets for the widget index
+  def user_widgets
+    Widget.where("user_id = :user_id", user_id: id)
+  end
 end

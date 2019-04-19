@@ -2,6 +2,7 @@ class WidgetsController < ApplicationController
 
   def index
     @widget = Widget.new
+    @widget_index = current_user.user_widgets
   end
   
   def create

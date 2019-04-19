@@ -2,7 +2,13 @@
   <div class="col-sm-3" id="side-nav">
     <ul class="nav flex-column">
       <div class="widget-index">
-        <li><a href="#">Widget 1</a></li>
+        <% if @widget_index.any? %>
+          <ul class="widgets">
+            <% @widget_index.each do |w| %>
+              <li><%= w.name %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </div>
     </ul>
     <div class="widget-form">
@@ -10,5 +16,6 @@
     </div>
   </div>
   <div class="col-sm-8">
+    Widget Index
   </div>
 </div>
