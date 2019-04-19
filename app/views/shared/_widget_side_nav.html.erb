@@ -1,10 +1,11 @@
 <div class="col-sm-3" id="side-nav">
     <ul class="nav flex-column">
       <div class="widget-index">
+        <h4>Widgets</h4>
         <% if @widget_index.any? %>
-          <ul class="widgets">
+          <ul class="sidebar-list">
             <% @widget_index.each do |w| %>
-              <li><%= link_to w.name, w %></li>
+              <li class="sidebar-item"><%= link_to w.name, w %></li>
             <% end %>
           </ul>
         <% end %>
