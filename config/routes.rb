@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'forms/index'
+  get 'forms/create'
+  get 'forms/show'
+  get 'forms/destroy'
   root 'widgets#index'
   get 'sessions/new'
   get    '/signup',  to: 'users#new'
