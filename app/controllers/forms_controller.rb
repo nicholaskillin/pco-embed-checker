@@ -6,6 +6,8 @@ class FormsController < ApplicationController
 
   def create
     @form = current_user.forms.build(form_params)
+    @form_index = current_user.user_forms
+
     if @form.save
       flash[:success] = "New form integration created."
       redirect_to @form
