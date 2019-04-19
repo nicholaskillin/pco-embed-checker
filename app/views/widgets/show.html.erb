@@ -2,10 +2,13 @@
   <%= render 'shared/widget_side_nav' %>
   <div class="col-sm-8">
     <div class="row">
-      <h1><%= @widget_current.name %></h1>
+      <h1><%= @widget_current.name %></h1> - <%= link_to 'Delete', 
+                                                widget_path(@widget_current), 
+                                                method: :delete, 
+                                                data: { confirm: 'Are you sure?' } %> 
     </div>
     <div class="row">
-      <%=  @widget_current.code.html_safe %>
+      <%= @widget_current.code.html_safe %>
     </div>
   </div>
 </div>

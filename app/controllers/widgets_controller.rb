@@ -21,6 +21,13 @@ class WidgetsController < ApplicationController
     @widget_index = current_user.user_widgets
   end
 
+  def destroy
+    @widget_current = Widget.find(params[:id])
+    @widget_current.destroy
+  
+    redirect_to widgets_path
+  end
+
   private
     
     def widget_params
