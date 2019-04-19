@@ -1,2 +1,14 @@
-<h1>Forms#show</h1>
-<p>Find me in app/views/forms/show.html.erb</p>
+<div class="row">
+  <%= render 'shared/form_side_nav' %>
+  <div class="col-sm-8">
+    <div class="row">
+      <h1><%= @form_current.name %></h1> - <%= link_to 'Delete', 
+                                                form_path(@form_current), 
+                                                method: :delete, 
+                                                data: { confirm: 'Are you sure?' } %> 
+    </div>
+    <div class="row">
+      <%= link_to "See your form here", @form_current.code %>
+    </div>
+  </div>
+</div>
