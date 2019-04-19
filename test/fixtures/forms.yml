@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  code: MyString
+  url: MyString
   user: one
 
 two:
   name: MyString
-  code: MyString
+  url: MyString
   user: two
