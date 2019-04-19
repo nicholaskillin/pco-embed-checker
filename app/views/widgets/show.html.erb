@@ -5,7 +5,7 @@
       <h1><%= @widget_current.name %></h1>
     </div>
     <div class="row">
-      Widget Code: <%=  @widget_current.code %>
+      <%=  @widget_current.code.html_safe %>
     </div>
   </div>
 </div>
