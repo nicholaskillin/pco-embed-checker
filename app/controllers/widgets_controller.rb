@@ -15,6 +15,11 @@ class WidgetsController < ApplicationController
     end
   end
 
+  def show
+    @widget = Widget.find(params[:id])
+    @widget_index = current_user.user_widgets
+  end
+
   private
     
     def widget_params

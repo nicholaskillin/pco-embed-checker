@@ -1,2 +1,7 @@
-Widget Name: <%= @widget.name %><br>
-Widget Code: <%= @widget.code %>
+<div class="row">
+  <%= render 'shared/widget_side_nav' %>
+  <div class="col-sm-8">
+    Widget Name: <%= @widget.name %>
+    Widget Code: <%=  @widget.code %>
+  </div>
+</div>
