@@ -1,0 +1,25 @@
+<div>
+  <h4>New Form</h4>
+  <%= form_for @form, url: {action: "create"} do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div class="form-group">
+      <%= f.label "Name" %>
+      <%= f.text_field :name, class: "form-control" %>
+      <small id="passwordHelpBlock" class="form-text text-muted">
+        Enter the name of your form.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "URL" %>
+      <%= f.text_area :code, class: "form-control" %>
+      <small id="passwordHelpBlock" class="form-text text-muted">
+        Enter the public URL for your form here.
+      </small>
+    </div>
+    
+    <%= f.submit 'Create Form', class: "btn btn-primary" %>
+  <% end %>
+</div>
