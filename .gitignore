@@ -29,5 +29,9 @@
 # Ignore application configuration
 /config/application.yml
 
+<<<<<<< HEAD
 # Ignore local certs
+=======
+# Ignore local certificates
+>>>>>>> remove local certs
 /config/ssl
