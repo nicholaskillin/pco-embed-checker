@@ -10,5 +10,8 @@
     <div class="row">
       <%= link_to "See your form here", @form_current.url, class: "btn btn-primary", target: "blank" %>
     </div>
+    <div class="row">
+      <%= link_to "Open in Church Center modal", @form_current.url+"?open-in-church-center-modal=true", class: "btn btn-primary", target: "blank" %>
+    </div>
   </div>
 </div>
