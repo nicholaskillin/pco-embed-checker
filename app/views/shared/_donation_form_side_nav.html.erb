@@ -1,0 +1,17 @@
+<div class="col-sm-3" id="side-nav">
+    <ul class="nav flex-column">
+      <div class="form-index">
+        <h4>Donation Forms</h4>
+        <% if @donation_form_index.any? %>
+          <ul class="sidebar-list">
+            <% @donation_form_index.each do |f| %>
+              <li class="sidebar-item"><%= link_to f.name, f %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </ul>
+    <div class="donation_forms-form">
+      <%= render 'donation_forms_form'%>
+    </div>
+  </div>
