@@ -3,7 +3,7 @@
   <div class="col-sm-8">
     <div class="row">
       <h1><%= @donation_form_current.name %></h1> - <%= link_to 'Delete', 
-                                                form_path(@donation_form_current), 
+                                                donation_form_path(@donation_form_current), 
                                                 method: :delete, 
                                                 data: { confirm: 'Are you sure?' } %> 
     </div>
