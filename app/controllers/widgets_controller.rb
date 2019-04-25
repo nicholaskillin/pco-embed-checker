@@ -22,7 +22,7 @@ class WidgetsController < ApplicationController
   end
 
   def destroy
-    @widget_current = Widget.find(params[:id])
+    @widget_current = current_user.widgets.find(params[:id])
     @widget_current.destroy
   
     redirect_to widgets_path
