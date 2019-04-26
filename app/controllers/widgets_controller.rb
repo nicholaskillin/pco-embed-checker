@@ -15,13 +15,13 @@ class WidgetsController < ApplicationController
   end
 
   def show
-    @widget_current = current_user.widgets.find(params[:id])
+    @widget = current_user.widgets.find(params[:id])
     @widgets = current_user.widgets
   end
 
   def destroy
-    @widget_current = current_user.widgets.find(params[:id])
-    @widget_current.destroy
+    @widget = current_user.widgets.find(params[:id])
+    @widget.destroy
   
     redirect_to widgets_path
   end
