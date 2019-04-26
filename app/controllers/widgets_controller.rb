@@ -1,7 +1,6 @@
 class WidgetsController < ApplicationController
 
   def index
-    @widget = Widget.new
     @widget_index = current_user.widgets
   end
   
@@ -16,7 +15,6 @@ class WidgetsController < ApplicationController
   end
 
   def show
-    @widget = Widget.new
     @widget_current = current_user.widgets.find(params[:id])
     @widget_index = current_user.widgets
   end
