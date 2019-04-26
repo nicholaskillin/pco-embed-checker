@@ -2,9 +2,9 @@
     <ul class="nav flex-column">
       <div class="widget-index">
         <h4>Widgets</h4>
-        <% if @widget_index.any? %>
+        <% if @widgets.any? %>
           <ul class="sidebar-list">
-            <% @widget_index.each do |w| %>
+            <% @widgets.each do |w| %>
               <li class="sidebar-item"><%= link_to w.name, w %></li>
             <% end %>
           </ul>
