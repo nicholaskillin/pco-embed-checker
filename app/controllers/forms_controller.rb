@@ -1,11 +1,11 @@
 class FormsController < ApplicationController
   def index
-    @form_index = current_user.forms
+    @forms = current_user.forms
   end
 
   def create
     @form = current_user.forms.build(form_params)
-    @form_index = current_user.forms
+    @forms = current_user.forms
 
     if @form.save
       flash[:success] = "New form integration created."
@@ -17,7 +17,7 @@ class FormsController < ApplicationController
 
   def show
     @form_current = current_user.forms.find(params[:id])
-    @form_index = current_user.forms
+    @forms = current_user.forms
   end
 
   def destroy

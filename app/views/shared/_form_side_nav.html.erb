@@ -2,9 +2,9 @@
     <ul class="nav flex-column">
       <div class="form-index">
         <h4>Forms</h4>
-        <% if @form_index.any? %>
+        <% if @forms.any? %>
           <ul class="sidebar-list">
-            <% @form_index.each do |f| %>
+            <% @forms.each do |f| %>
               <li class="sidebar-item"><%= link_to f.name, f %></li>
             <% end %>
           </ul>
