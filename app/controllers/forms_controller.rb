@@ -1,6 +1,5 @@
 class FormsController < ApplicationController
   def index
-    @form = Form.new
     @form_index = current_user.forms
   end
 
@@ -17,7 +16,6 @@ class FormsController < ApplicationController
   end
 
   def show
-    @form = Form.new
     @form_current = current_user.forms.find(params[:id])
     @form_index = current_user.forms
   end
