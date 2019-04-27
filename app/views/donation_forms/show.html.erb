@@ -2,16 +2,16 @@
   <%= render 'shared/donation_form_side_nav' %>
   <div class="col-sm-8">
     <div class="row">
-      <h1><%= @donation_form_current.name %></h1> - <%= link_to 'Delete', 
-                                                donation_form_path(@donation_form_current), 
+      <h1><%= @donation_form.name %></h1> - <%= link_to 'Delete', 
+                                                donation_form_path(@donation_form), 
                                                 method: :delete, 
                                                 data: { confirm: 'Are you sure?' } %> 
     </div>
     <div class="row">
-      <%= link_to "See your donation form here", @donation_form_current.url, class: "btn btn-primary", target: "blank" %>
+      <%= link_to "See your donation form here", @donation_form.url, class: "btn btn-primary", target: "blank" %>
     </div>
     <div class="row">
-      <%= link_to "Open in Church Center modal", @donation_form_current.url+"?open-in-church-center-modal=true", class: "btn btn-primary", target: "blank" %>
+      <%= link_to "Open in Church Center modal", @donation_form.url+"?open-in-church-center-modal=true", class: "btn btn-primary", target: "blank" %>
     </div>
   </div>
 </div>
