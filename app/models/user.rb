@@ -21,8 +21,4 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
-  def user_forms
-    Form.where("user_id = :user_id", user_id: id)
-  end
-
 end
