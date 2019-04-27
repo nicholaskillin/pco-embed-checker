@@ -1,6 +1,6 @@
 <div>
   <h4>New Donation Form</h4>
-  <%= form_for @donation_form, url: {action: "create"} do |f| %>
+  <%= form_for DonationForm.new, url: {action: "create"} do |f| %>
 
      <%= render 'shared/error_messages', object: f.object %>
 
