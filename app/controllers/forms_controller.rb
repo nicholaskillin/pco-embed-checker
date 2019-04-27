@@ -16,13 +16,13 @@ class FormsController < ApplicationController
   end
 
   def show
-    @form_current = current_user.forms.find(params[:id])
+    @form = current_user.forms.find(params[:id])
     @forms = current_user.forms
   end
 
   def destroy
-    @form_current = current_user.forms.find(params[:id])
-    @form_current.destroy
+    @form = current_user.forms.find(params[:id])
+    @form.destroy
   
     redirect_to forms_path
   end
