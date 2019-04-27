@@ -16,13 +16,13 @@ class DonationFormsController < ApplicationController
   end
 
    def show
-    @donation_form_current = current_user.donation_forms.find(params[:id])
+    @donation_form = current_user.donation_forms.find(params[:id])
     @donation_forms = current_user.donation_forms
   end
 
    def destroy
-    @donation_form_current = current_user.donation_forms.find(params[:id])
-    @donation_form_current.destroy
+    @donation_form = current_user.donation_forms.find(params[:id])
+    @donation_form.destroy
 
      redirect_to donation_forms_path
   end
