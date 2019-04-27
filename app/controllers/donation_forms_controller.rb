@@ -1,12 +1,11 @@
 class DonationFormsController < ApplicationController
   def index
-    @donation_form = DonationForm.new
-    @donation_form_index = current_user.donation_forms
+    @donation_forms = current_user.donation_forms
   end
 
    def create
     @donation_form = current_user.donation_forms.build(donation_form_params)
-    @donation_form_index = current_user.donation_forms
+    @donation_forms = current_user.donation_forms
 
      if @donation_form.save
       flash[:success] = "New donation form integration created."
@@ -17,9 +16,8 @@ class DonationFormsController < ApplicationController
   end
 
    def show
-    @donation_form = DonationForm.new
     @donation_form_current = current_user.donation_forms.find(params[:id])
-    @donation_form_index = current_user.donation_forms
+    @donation_forms = current_user.donation_forms
   end
 
    def destroy
