@@ -2,13 +2,19 @@
   <%= render 'shared/form_side_nav' %>
   <div class="col-sm-8">
     <div class="row">
-      <h1><%= @form_current.name %></h1> - <%= link_to 'Delete', 
-                                                form_path(@form_current), 
+      <h1><%= @form.name %></h1> - <%= link_to 'Delete', 
+                                                form_path(@form), 
                                                 method: :delete, 
                                                 data: { confirm: 'Are you sure?' } %> 
     </div>
     <div class="row">
-      <%= link_to "See your form here", @form_current.url, class: "btn btn-primary", target: "blank" %>
+      <%= link_to "See your form here", @form.url, class: "btn btn-primary", target: "blank" %>
     </div>
+<<<<<<< HEAD
+=======
+    <div class="row">
+      <%= link_to "Open in Church Center modal", @form.url+"?open-in-church-center-modal=true", class: "btn btn-primary", target: "blank" %>
+    </div>
+>>>>>>> changed @form_current to @form
   </div>
 </div>
