@@ -1,17 +1,29 @@
 class WidgetsController < ApplicationController
 
   def index
-    @widget = Widget.new
+    @widgets = current_user.widgets
   end
   
   def create
     @widget = current_user.widgets.build(widget_params)
     if @widget.save
       flash[:success] = "New widget created."
-      redirect_to root_url
+      redirect_to @widget
     else
       render :index
     end
+  end
+
+  def show
+    @widget = current_user.widgets.find(params[:id])
+    @widgets = current_user.widgets
+  end
+
+  def destroy
+    @widget = current_user.widgets.find(params[:id])
+    @widget.destroy
+  
+    redirect_to widgets_path
   end
 
   private

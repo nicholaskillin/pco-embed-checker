@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Carlsbad Church."
-      redirect_to root_url
+      redirect_to 'widgets#index'
     else
       flash[:danger] = "Your account was not created"
     end
