@@ -1,5 +1,19 @@
+<% content_for :resource_name do %>
+  Widgets
+<% end %>
+
+<% content_for :resource_index do %>
+  <% if @widgets.any? %>
+    <ul class="sidebar-list">
+      <% @widgets.each do |w| %>
+        <li class="sidebar-item"><%= link_to w.name, w %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
 <div class="row">
-  <%= render 'shared/widget_side_nav' %>
+  <%= render 'shared/side_nav' %>
   <div class="col-sm-8">
     <div class="row">
       <h1><%= @widget.name %></h1> - <%= link_to 'Delete', 
