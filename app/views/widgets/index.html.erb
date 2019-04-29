@@ -12,6 +12,10 @@
   <% end %>
 <% end %>
 
+<% content_for :resource_form do %>
+  <%= render 'widget_form'%>
+<% end %>
+
 <div class="row">
   <%= render 'shared/side_nav' %>
   <div class="col-sm-8">

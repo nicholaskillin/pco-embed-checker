@@ -1,5 +1,23 @@
+<% content_for :resource_name do %>
+  Forms
+<% end %>
+
+<% content_for :resource_index do %>
+  <% if @forms.any? %>
+    <ul class="sidebar-list">
+      <% @forms.each do |f| %>
+        <li class="sidebar-item"><%= link_to f.name, f %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<% content_for :resource_form do %>
+  <%= render 'forms_form'%>
+<% end %>
+
 <div class="row">
-  <%= render 'shared/form_side_nav' %>
+  <%= render 'shared/side_nav' %>
   <div class="col-sm-8">
     Create a new form or click on a form to see that form here.
   </div>
