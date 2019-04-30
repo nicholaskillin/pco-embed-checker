@@ -1,20 +1,4 @@
-<% content_for :resource_name do %>
-  Widgets
-<% end %>
-
-<% content_for :resource_index do %>
-  <% if @widgets.any? %>
-    <ul class="sidebar-list">
-      <% @widgets.each do |w| %>
-        <li class="sidebar-item"><%= link_to w.name, w %></li>
-      <% end %>
-    </ul>
-  <% end %>
-<% end %>
-
-<% content_for :resource_form do %>
-  <%= render 'widget_form'%>
-<% end %>
+<%= render 'widget_sidebar_content' %>
 
 <div class="row">
   <%= render 'shared/side_nav' %>
