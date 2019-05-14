@@ -40,7 +40,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'figaro'
 
 # Needed for oAUTH2
-gem 'devise'
 gem 'omniauth-oauth2'
 
 # Password Encryption
