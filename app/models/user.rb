@@ -1,19 +1,9 @@
 class User < ApplicationRecord
-  before_save { email.downcase! }
   has_many :widgets, dependent: :destroy
   has_many :forms, dependent: :destroy
   has_many :donation_forms, dependent: :destroy
 
   validates :name, presence: true
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true,
-                    length: {maximum: 255},
-                    format: { with: VALID_EMAIL_REGEX }, 
-                    uniqueness: { case_sensitive: false }
-  validates :password, presence: true,
-                       length: { minimum: 6 }
-
-  has_secure_password
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -29,7 +19,6 @@ class User < ApplicationRecord
 			user.provider = auth.provider
 			user.uid = auth.uid
 			user.name = auth.info.name
-			user.email = auth.info.email
 			user.save!
 		end
 	end
