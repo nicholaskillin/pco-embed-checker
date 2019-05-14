@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_20_135158) do
+ActiveRecord::Schema.define(version: 2019_05_14_021353) do
 
   create_table "donation_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_04_20_135158) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "provider"
+    t.string "uid"
   end
 
   create_table "widgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
