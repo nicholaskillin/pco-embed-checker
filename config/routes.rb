@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'donation_forms/show'
+  get 'donation_forms/index'
   root 'widgets#index'
   get 'sessions/new'
   get    '/signup',  to: 'users#new'
@@ -9,5 +11,6 @@ Rails.application.routes.draw do
   resources :users
   resources :widgets
   resources :forms
+  resources :donation_forms
   
 end
