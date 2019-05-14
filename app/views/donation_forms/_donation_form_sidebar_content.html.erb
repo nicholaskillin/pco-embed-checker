@@ -1,0 +1,17 @@
+<% content_for :resource_name do %>
+  Donation Forms
+<% end %>
+
+<% content_for :resource_index do %>
+  <% if @donation_forms.any? %>
+    <ul class="sidebar-list">
+      <% @donation_forms.each do |f| %>
+        <li class="sidebar-item"><%= link_to f.name, f %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<% content_for :resource_form do %>
+  <%= render 'donation_forms_form'%>
+<% end %>
