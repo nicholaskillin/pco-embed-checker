@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
+<<<<<<< HEAD
   resources :widgets
   resources :forms
+=======
+>>>>>>> 9023df14e9a068a31be48f4654fee530b0157894
   resources :donation_forms
   
 end
