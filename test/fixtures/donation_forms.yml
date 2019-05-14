@@ -2,7 +2,6 @@
 
 one:
   name: MyString
-<<<<<<< HEAD
   url: https://www.test.com
   user: michael
 
@@ -10,10 +9,3 @@ two:
   name: MyString
   url: https://www.test.com
   user: michael
-=======
-  url: MyString
-
-two:
-  name: MyString
-  url: MyString
->>>>>>> 9023df14e9a068a31be48f4654fee530b0157894

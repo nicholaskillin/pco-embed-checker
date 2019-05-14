@@ -1,10 +1,7 @@
 class User < ApplicationRecord
   before_save { email.downcase! }
   has_many :widgets, dependent: :destroy
-<<<<<<< HEAD
   has_many :forms, dependent: :destroy
-=======
->>>>>>> 9023df14e9a068a31be48f4654fee530b0157894
   has_many :donation_forms, dependent: :destroy
 
   validates :name, presence: true
