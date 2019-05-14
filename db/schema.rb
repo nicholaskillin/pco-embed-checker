@@ -10,9 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_04_19_221342) do
-=======
 ActiveRecord::Schema.define(version: 2019_04_20_135158) do
 
   create_table "donation_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -23,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_04_20_135158) do
     t.bigint "user_id"
     t.index ["user_id"], name: "index_donation_forms_on_user_id"
   end
->>>>>>> added donation forms model and linked it to the user
 
   create_table "forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -51,10 +47,7 @@ ActiveRecord::Schema.define(version: 2019_04_20_135158) do
     t.index ["user_id"], name: "index_widgets_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
   add_foreign_key "donation_forms", "users"
->>>>>>> added donation forms model and linked it to the user
   add_foreign_key "forms", "users"
   add_foreign_key "widgets", "users"
 end
