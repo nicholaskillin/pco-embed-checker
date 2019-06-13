@@ -9,7 +9,6 @@ module OmniAuth
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
       option :client_options,   { site: "https://api.planningcenteronline.com" }
-      option :authorize_params, { force_login: true }
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
