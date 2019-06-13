@@ -4,10 +4,14 @@
   <%= render 'shared/side_nav' %>
   <div class="col-sm-8">
     <div class="row">
-      <h1><%= @form.name %></h1> - <%= link_to 'Delete', 
-                                                form_path(@form), 
-                                                method: :delete, 
-                                                data: { confirm: 'Are you sure?' } %> 
+      <h1><%= @form.name %></h1>
+      <div class="col">
+        <%= link_to "<i class=\"material-icons delete-icon\">delete</i>".html_safe, 
+          form_path(@form), 
+          method: :delete, 
+          data: { confirm: 'Are you sure you want to delete this?' },
+          class: "delete-link" %> 
+      </div> 
     </div>
     <div class="row">
       <%= link_to "See your form here", @form.url, class: "btn btn-primary", target: "blank" %>
