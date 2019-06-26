@@ -17,7 +17,6 @@ class WidgetsController < ApplicationController
   def show
     @widget = current_user.widgets.find(params[:id])
     @widgets = current_user.widgets
-    @user = current_user
   end
 
   def destroy
