@@ -23,7 +23,8 @@ module OmniAuth
 
       extra do
         {
-          'raw_info' => raw_info
+          'raw_info' => raw_info,
+          'org_id' => raw_info['meta']['parent']['id']
         }
       end
 

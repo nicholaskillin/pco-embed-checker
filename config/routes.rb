@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get 'login', to: redirect('/auth/planning_center'), as: 'login'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
+  # This needs deleted
+  get '/yay', to: 'static_pages#yay'
+  get '/boo', to: 'static_pages#boo'
+  # End deleting
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users

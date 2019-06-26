@@ -4,10 +4,16 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def create
-    @user = User.find_or_create_from_auth_hash(auth_hash)
-  	session[:user_id] = @user.id
-  	redirect_to root_url
+  def create    
+    org_id = auth_hash['extra']['org_id']
+    if org_id == "1"
+      @user = User.find_or_create_from_auth_hash(auth_hash)
+  	  session[:user_id] = @user.id
+      redirect_to root_url
+    else
+      render 'new'
+      log_out
+    end
   end
 
   def destroy
@@ -17,8 +23,8 @@ class SessionsController < ApplicationController
 
   private
 
-  def auth_hash
-    request.env['omniauth.auth']
-  end
+    def auth_hash
+      request.env['omniauth.auth']
+    end
 
 end

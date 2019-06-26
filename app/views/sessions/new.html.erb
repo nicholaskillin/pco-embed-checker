@@ -1,20 +1,6 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
-    <h2>Log in</h2>
-    <%= form_for(:session, url: login_path) do |f| %>
-
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-         <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <h2>Please log into your staff account</h2>
+    <button onclick="window.location.href='/login'">Log in</button>
   </div>
 </div>
