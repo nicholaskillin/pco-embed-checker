@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     org_id = auth_hash['extra']['org_id']
     if org_id == "1"
       @user = User.find_or_create_from_auth_hash(auth_hash)
-    session[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to root_url
     else
       render 'new'
