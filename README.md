@@ -19,6 +19,7 @@ Change directory to the new app
 Setup your database and run
 
     bundle install
+    rake db:migrate
     rails s
 
 and you should be up and running.
