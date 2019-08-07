@@ -22,4 +22,21 @@ Setup your database and run
     rake db:migrate
     rails s
 
+Setup oAuth
+You will need to setup your own oAuth client ID and secret to use in Development. Here are the steps required to do that.
+    
+    Go to https://api.planningcenteronline.com
+    Click on "New Application" under the "My Developer Applications" section
+    The App name, description and Url don't really matter. For the `Authorization callback URLs` you will need to use `https://127.0.0.1:3000/auth/planning_center/callback` on the first line and `https://carlsbad-website.herokuapp.com/auth/planning_center/callback` on the second line.
+    Submit that new application.
+    Now, back in your dev repo create a file called `application.yml' in the `config` folder.
+    Add the `application.yml` file to your .gitignore
+    Inside that file add your Client ID and Secret for your oAuth app
+
+```
+# PCO API
+PCO_Client_ID: "CLIENT_ID_HERE"
+PCO_Secret: "CLIENT_SECRET_HERE"
+```
+
 and you should be up and running.
