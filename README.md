@@ -19,6 +19,7 @@ Change directory to the new app
 ## Setup your database
 
     bundle install
+    rake db:create
     rake db:migrate
 
 ## Setup oAuth
@@ -28,7 +29,7 @@ You will need to setup your own oAuth client ID and secret to use in Development
 - Click on "New Application" under the "My Developer Applications" section
 - The App name, description and Url don't really matter. For the `Authorization callback URLs` you will need to use `https://localhost:3000/auth/planning_center/callback` on the first line and `https://carlsbad-website.herokuapp.com/auth/planning_center/callback` on the second line.
 - Submit that new application.
-- Now, back in your dev repo create a file called `application.yml' in the `config` folder.
+- Now, back in your dev repo create a file called `application.yml` in the `config` folder.
 - Add the `application.yml` file to your .gitignore
 - Inside that file add your Client ID and Secret for your oAuth app
 
@@ -49,7 +50,7 @@ In order to use the church center modals you will have to be using https:// loca
 
 Start your server
 
-    `rails s -b 'ssl://localhost:3000?key=config/ssl/localhost.key&cert=config/ssl/localhost.crt'`
+    rails s -b 'ssl://localhost:3000?key=config/ssl/localhost.key&cert=config/ssl/localhost.crt'
 
 ## In order to log into this app, you will need to be logged into org 1 in Planning Center, so you will want to switch to your Staff account before pulling up the app
 
