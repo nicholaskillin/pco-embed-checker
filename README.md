@@ -16,12 +16,12 @@ Change directory to the new app
 
     cd carlsbad_site
 
-Setup your database
+## Setup your database
 
     bundle install
     rake db:migrate
 
-Setup oAuth
+## Setup oAuth
 You will need to setup your own oAuth client ID and secret to use in Development. Here are the steps required to do that.
     
 - Go to https://api.planningcenteronline.com
