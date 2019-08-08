@@ -16,11 +16,10 @@ Change directory to the new app
 
     cd carlsbad_site
 
-Setup your database and run
+Setup your database
 
     bundle install
     rake db:migrate
-    rails s
 
 Setup oAuth
 You will need to setup your own oAuth client ID and secret to use in Development. Here are the steps required to do that.
@@ -38,5 +37,13 @@ You will need to setup your own oAuth client ID and secret to use in Development
 PCO_Client_ID: "CLIENT_ID_HERE"
 PCO_Secret: "CLIENT_SECRET_HERE"
 ```
+
+In order to use the church center modals you will have to be using https:// locally.
+
+Start your server
+
+    rails s
+
+# In order to log into this app, you will need to be logged into org 1 in Planning Center, so you will want to switch to your Staff account before pulling up the app
 
 and you should be up and running.
