@@ -39,18 +39,9 @@ PCO_Client_ID: "CLIENT_ID_HERE"
 PCO_Secret: "CLIENT_SECRET_HERE"
 ```
 
-## Setting up SSL
-In order to use the church center modals you will have to be using https:// locally.
-
-- Create a folder called `ssl` in your `config` folder
-- Navigate to the `ssl` folder in your terminal
-- In terminal enter `openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout localhost.key -out localhost.crt`
-- Answer the questions.
-- Once this is done you should now have two files, `localhost.crt` and `localhost.key` in your `ssl` folder
-
 Start your server
 
-    rails s -b 'ssl://localhost:3000?key=config/ssl/localhost.key&cert=config/ssl/localhost.crt'
+    rails s
 
 ## In order to log into this app, you will need to be logged into org 1 in Planning Center, so you will want to switch to your Staff account before pulling up the app
 
