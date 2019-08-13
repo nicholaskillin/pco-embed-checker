@@ -6,7 +6,16 @@
   <% if @donation_forms.any? %>
     <ul class="sidebar-list">
       <% @donation_forms.each do |f| %>
-        <li class="sidebar-item"><%= link_to f.name, f %></li>
+        <li class="sidebar-item" style="display: flex;">
+          <%= link_to "<i class=\"material-icons delete-icon\">delete</i>".html_safe,
+            donation_form_path(f),
+            method: :delete,
+            data: { confirm: 'Are you sure you want to delete this?' },
+            class: "delete-link",
+            style: "display: inline-block; margin: -3px 4px 0 0;"
+          %>
+          <%= link_to f.name, f %>
+        </li>
       <% end %>
     </ul>
   <% end %>

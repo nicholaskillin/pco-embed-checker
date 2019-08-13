@@ -3,21 +3,14 @@
 <div class="row">
   <%= render 'shared/side_nav' %>
   <div class="col-sm-8">
-    <div class="row">
-      <h1><%= @donation_form.name %></h1>
-      <div class="col">
-        <%= link_to "<i class=\"material-icons delete-icon\">delete</i>".html_safe, 
-          donation_form_path(@donation_form), 
-          method: :delete, 
-          data: { confirm: 'Are you sure you want to delete this?' },
-          class: "delete-link" %> 
-      </div>
-    </div>
-    <div class="row">
-      <%= link_to "See your donation form here", @donation_form.url, class: "btn btn-primary", target: "blank" %>
-    </div>
-    <div class="row">
-      <%= link_to "Open in Church Center modal", @donation_form.url+"?open-in-church-center-modal=true", class: "btn btn-primary", target: "blank" %>
-    </div>
+    <%=
+      react_component("add_integration_form",
+        {
+          app: @donation_form.app,
+          data: @donation_form.url,
+          name: @donation_form.name
+        }
+      )
+    %>
   </div>
 </div>
