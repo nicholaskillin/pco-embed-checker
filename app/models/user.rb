@@ -21,6 +21,5 @@ class User < ApplicationRecord
       user.name = auth.info.name
       user.save!
 		end
-	end
-
+  end
 end
