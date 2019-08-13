@@ -17,13 +17,17 @@ export default class AddIntegrationForm extends React.Component {
 		const { data, app, name, error } = this.state
 		const dataArray = data.split('/')
 
-		const handleInputChange = e => {
+		const handleUpdateData = e => {
 			this.setState({ data: e.target.value })
 		}
 
+    const handleUpdateName = e => {
+      this.setState({ name: e.target.value })
+    }
+
 		const handleClear = e => {
 			e.preventDefault()
-			this.setState({ app: '', data: '', error: false })
+			this.setState({ app: '', data: '', name: '', error: false })
 		}
 
 		const setDataType = () => {
@@ -41,11 +45,21 @@ export default class AddIntegrationForm extends React.Component {
 		return (
 			<div style={{ display: 'flex' }}>
 				<div style={{ marginRight: 16 }}>
+          <label>Name</label>
+          <br />
+          <input
+            value={name}
+            onChange={handleUpdateName}
+            style={{display: "block", width: "100%"}}
+          />
+          <br />
+          <label>Paste Code Here</label>
+          <br />
 					<textarea
 						rows="8"
 						cols="30"
 						value={data}
-						onChange={handleInputChange}
+						onChange={handleUpdateData}
 					/>
 					<br />
 					<button
@@ -82,7 +96,7 @@ export default class AddIntegrationForm extends React.Component {
 					<DisplayForm data={data} app={app} name={name} />
 				)}
 
-				{app === 'resources' && <DisplayWidget data={data} />}
+				{app === 'resources' && <DisplayWidget data={data} name={name} />}
 			</div>
 		)
 	}

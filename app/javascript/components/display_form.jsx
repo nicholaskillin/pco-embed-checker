@@ -17,7 +17,7 @@ export default function DisplayForm(props) {
 				]}
 			/>
       <h2>{name}</h2>
-      <p>{app}</p>
+      <p>({app})</p>
 			<a href={url} data-open-in-church-center-modal="true">
 				Open modal
 			</a>

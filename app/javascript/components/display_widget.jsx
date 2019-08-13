@@ -20,7 +20,8 @@ export default function DisplayWidget(props) {
 				]}
 			/>
 
-			<h2>Resources Widget</h2>
+      <h2>{name}</h2>
+      <p>(resources)</p>
 
 			<div id="resources_calendar_widget" class="styled">
 				<div class="loader">Loading...</div>
