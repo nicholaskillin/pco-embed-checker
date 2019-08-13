@@ -30,6 +30,6 @@ class DonationFormsController < ApplicationController
    private
 
      def donation_form_params
-      params.require(:donation_form).permit(:name, :url)
+      params.require(:donation_form).permit(:name, :url, :app)
     end
 end
