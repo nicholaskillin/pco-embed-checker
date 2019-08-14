@@ -3,6 +3,4 @@ class DonationForm < ApplicationRecord
   validates :name, presence: true
   validates :url, presence: true
   validates :url, length: { maximum: 255 }
-
-  enum app: [:giving, :people, :resources]
 end
