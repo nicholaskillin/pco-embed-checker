@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 export default function DisplayWidget(props) {
-  const { data } = props
+  const { data, name } = props
 	let dataArray = data.split('</div>')
 
 	const isolateScript = dataArray[dataArray.length - 1]
@@ -23,8 +23,8 @@ export default function DisplayWidget(props) {
       <h2>{name}</h2>
       <p>(resources)</p>
 
-			<div id="resources_calendar_widget" class="styled">
-				<div class="loader">Loading...</div>
+			<div id="resources_calendar_widget" className="styled">
+				<div className="loader">Loading...</div>
 			</div>
 		</div>
 	)
