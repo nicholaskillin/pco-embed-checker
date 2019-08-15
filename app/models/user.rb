@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :widgets, dependent: :destroy
   has_many :forms, dependent: :destroy
   has_many :donation_forms, dependent: :destroy
+  has_many :integrations, dependent: :destroy
 
   validates :name, presence: true
 

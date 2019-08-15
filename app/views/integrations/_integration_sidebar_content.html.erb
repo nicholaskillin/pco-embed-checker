@@ -1,14 +1,14 @@
 <% content_for :resource_name do %>
-  Donation Forms
+  Integrations
 <% end %>
 
 <% content_for :resource_index do %>
-  <% if @donation_forms.any? %>
+  <% if @integrations.any? %>
     <ul class="sidebar-list">
-      <% @donation_forms.each do |f| %>
+      <% @integrations.each do |f| %>
         <li class="sidebar-item" style="display: flex;">
           <%= link_to "<i class=\"material-icons delete-icon\">delete</i>".html_safe,
-            donation_form_path(f),
+            integration_path(f),
             method: :delete,
             data: { confirm: 'Are you sure you want to delete this?' },
             class: "delete-link",

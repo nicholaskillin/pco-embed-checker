@@ -1,4 +1,4 @@
-<%= render 'donation_form_sidebar_content' %>
+<%= render 'integration_sidebar_content' %>
 
 <div class="row">
   <%= render 'shared/side_nav' %>
@@ -6,9 +6,9 @@
     <%=
       react_component("add_integration_form",
         {
-          app: @donation_form.app,
-          data: @donation_form.url,
-          name: @donation_form.name
+          app: @integration.app,
+          data: @integration.data,
+          name: @integration.name
         }
       )
     %>

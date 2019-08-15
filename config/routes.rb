@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   resources :widgets
   resources :forms
   resources :donation_forms
-  
+  resources :integrations, except: [:create]
+  namespace :api do 
+    namespace :v1 do 
+     resources :donation_forms, only: [:index, :create]
+     resources :integrations, only: [:create]
+    end 
+  end 
 end

@@ -3,11 +3,11 @@ class DonationFormsController < ApplicationController
     @donation_forms = current_user.donation_forms
   end
 
-   def create
+  def create
     @donation_form = current_user.donation_forms.build(donation_form_params)
     @donation_forms = current_user.donation_forms
 
-     if @donation_form.save
+    if @donation_form.save
       flash[:success] = "New donation form integration created."
       redirect_to @donation_form
     else
@@ -15,12 +15,12 @@ class DonationFormsController < ApplicationController
     end
   end
 
-   def show
+  def show
     @donation_form = current_user.donation_forms.find(params[:id])
     @donation_forms = current_user.donation_forms
   end
 
-   def destroy
+  def destroy
     @donation_form = current_user.donation_forms.find(params[:id])
     @donation_form.destroy
 
@@ -29,7 +29,7 @@ class DonationFormsController < ApplicationController
 
    private
 
-     def donation_form_params
-      params.require(:donation_form).permit(:name, :url)
-    end
+  def donation_form_params
+    params.require(:donation_form).permit(:name, :url, :app)
+  end
 end
