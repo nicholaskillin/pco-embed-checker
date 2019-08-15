@@ -14,10 +14,4 @@ class IntegrationsController < ApplicationController
 
      redirect_to integrations_path
   end
-
-   private
-
-  def integration_params
-    params.require(:integration).permit(:name, :data, :app)
-  end
 end

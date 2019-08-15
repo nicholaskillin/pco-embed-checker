@@ -21,5 +21,4 @@ Rails.application.routes.draw do
      resources :integrations, only: [:create]
     end 
   end 
-  
 end
