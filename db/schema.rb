@@ -10,26 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_215529) do
-
-  create_table "donation_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.integer "app"
-    t.index ["user_id"], name: "index_donation_forms_on_user_id"
-  end
-
-  create_table "forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_forms_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2019_08_15_164612) do
 
   create_table "integrations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -49,17 +30,5 @@ ActiveRecord::Schema.define(version: 2019_08_14_215529) do
     t.string "uid"
   end
 
-  create_table "widgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_widgets_on_user_id"
-  end
-
-  add_foreign_key "donation_forms", "users"
-  add_foreign_key "forms", "users"
   add_foreign_key "integrations", "users"
-  add_foreign_key "widgets", "users"
 end
