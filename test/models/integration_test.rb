@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DonationFormTest < ActiveSupport::TestCase
+class IntegrationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

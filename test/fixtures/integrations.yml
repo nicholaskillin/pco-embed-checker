@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  url: https://www.test.com
-  user: michael
+  data: MyText
+  app: MyString
 
 two:
   name: MyString
-  url: https://www.test.com
-  user: michael
+  data: MyText
+  app: MyString

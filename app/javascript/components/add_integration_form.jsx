@@ -21,13 +21,13 @@ export default class AddIntegrationForm extends React.Component {
     const handleSubmit = e => {
       e.preventDefault()
       let body = JSON.stringify({
-        donation_form: {
+        integration: {
           name: this.state.name,
-          url: this.state.data,
+          data: this.state.data,
           app: this.state.app
         }
       })
-      fetch("api/v1/donation_forms", {
+      fetch("api/v1/integrations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
