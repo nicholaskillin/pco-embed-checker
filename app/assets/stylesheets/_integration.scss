@@ -1,0 +1,21 @@
+.integration-details {
+  padding: 1.5em;
+  border: 1px solid $gray_300;
+  background: #fff;
+  box-shadow: 0 5px 10px -5px  $gray_400;
+  border-radius: 6px;
+  overflow: hidden;
+
+  h2 {
+    display: inline-block;
+    margin: 0;
+    padding:0;
+  }
+
+  svg {
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    margin: 0 4px 0 0;
+  }
+}

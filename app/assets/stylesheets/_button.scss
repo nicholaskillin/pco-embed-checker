@@ -1,0 +1,23 @@
+.btn {
+  display: inline-block;
+  background: $gray_500;
+  padding: .75em .85em;
+  border-radius: 4px;
+  color: $gray_800;
+  text-decoration: none;
+  transition: .2s all ease;
+  cursor: pointer;
+
+  &:hover {
+    background: $gray_400;
+  }
+
+  &.btn--primary {
+    background: $royal_blue;
+    color: #fff;
+
+    &:hover {
+      background: lighten($royal_blue, 5%);
+    }
+  }
+}
