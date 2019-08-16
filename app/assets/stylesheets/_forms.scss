@@ -1,0 +1,18 @@
+input, textarea {
+  border:1px solid $gray_400;
+  background: $gray_25;
+  border-radius: 4px;
+}
+
+input[type="text"] {
+	min-height: 40px;
+  padding: 0 8px;
+}
+
+textarea {
+  padding: 8px;
+}
+
+label {
+  color: $gray_800;
+}

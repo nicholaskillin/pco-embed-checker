@@ -10,7 +10,7 @@ export default function DisplayWidget(props) {
 		.replace('</script>', '')
 
 	return (
-		<div style={{ flex: 1 }}>
+		<div className="integration-details">
 			<Helmet
 				script={[
 					{
@@ -20,8 +20,9 @@ export default function DisplayWidget(props) {
 				]}
 			/>
 
-			<h2>{name}</h2>
-			<p>(resources)</p>
+      <div className="d-f ai-c jc-fs mb-2">
+				<h2>{name}</h2>
+			</div>
 
 			<div id="resources_calendar_widget" className="styled">
 				<div className="loader">Loading...</div>

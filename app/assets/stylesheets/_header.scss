@@ -1,0 +1,11 @@
+header {
+  height: 200px;
+  width: 100%;
+  background: $royal_blue;
+  background: linear-gradient(180deg, $royal_blue 0%, $azure 100%);
+}
+
+nav {
+  background: $light_cyan;
+  box-sizing: border-box;
+}
