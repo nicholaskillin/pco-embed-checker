@@ -11,11 +11,19 @@ export default class AddIntegrationForm extends React.Component {
       app: this.props.app || '',
       name: this.props.name || '',
       error: false,
+      hasInitialState: false,
     }
   }
+
+  componentDidMount() {
+    if(this.props.name) {
+      this.setState({ hasInitialState: true})
+    }
+  }
+
   render() {
     const token = $('meta[name="csrf-token"]').attr("content");
-    const { data, app, name, error } = this.state
+    const { data, app, name, error, hasInitialState } = this.state
     const dataArray = data.split('/')
 
     const handleSubmit = e => {
@@ -42,7 +50,6 @@ export default class AddIntegrationForm extends React.Component {
         .catch(function (error) {
           console.log(error)
         })
-      handleClear(e)
     }
 
     const handleUpdateData = e => {
@@ -71,62 +78,59 @@ export default class AddIntegrationForm extends React.Component {
     }
 
     return (
-      <div style={{ display: "flex" }}>
+      <div className="d-f fd-c p-2">
         <form onSubmit={handleSubmit}>
-          <div style={{ marginRight: 16 }}>
-            <label>Name</label>
-            <br />
-            <input
-              value={name}
-              onChange={handleUpdateName}
-              style={{ display: "block", width: "100%" }}
-            />
-            <br />
-            <label>Paste Code Here</label>
-            <br />
-            <textarea
-              rows="8"
-              cols="30"
-              value={data}
-              onChange={handleUpdateData}
-            />
-            <br />
-            <button
-              onClick={setDataType}
-              disabled={!data}
-              style={{ marginTop: 10 }}
-            >
-              Submit
-            </button>
-            <button
-              style={{ marginLeft: 8 }}
-              onClick={handleClear}
-              disabled={!data}
-            >
-              Clear
-            </button>
+          {app == "" && (
+            <div className="mb-2">
+              <div className="d-f fd-c mb-2">
+  							<label htmlFor="name" className="mb-4p">
+  								Name
+  							</label>
+  							<input
+  								name="name"
+  								value={name}
+  								onChange={handleUpdateName}
+  								type="text"
+  							/>
+  						</div>
 
-            {error && (
-              <div
-                style={{
-                  marginTop: 10,
-                  padding: 8,
-                  border: "1px solid red",
-                  color: "red",
-                  display: "inline-block"
-                }}
-              >
-                invalid format
-              </div>
-            )}
-          </div>
+              <div className="d-f fd-c">
+  							<label htmlFor="data" className="mb-4p">
+  								Paste Code Here
+  							</label>
+  							<textarea
+  								name="data"
+  								rows="8"
+  								cols="30"
+  								value={data}
+  								onChange={handleUpdateData}
+  							/>
+
+  							{error && (
+  								<div className="error mt-2 px-2 py-1 d-ib">invalid format</div>
+  							)}
+  						</div>
+
+              <button
+  							onClick={setDataType}
+  							disabled={!data}
+  							className="mt-2 btn btn--primary"
+  						>
+  							Show Integration
+  						</button>
+            </div>
+          )}
+
+          {(app === 'giving' || app === 'people') && (
+            <DisplayForm data={data} app={app} name={name} />
+          )}
+
+          {app === 'resources' && <DisplayWidget data={data} name={name} />}
+
+          {(app != "" && !hasInitialState) && (
+            <button type="submit">Save</button>
+          )}
         </form>
-
-        {(app === 'giving' || app === 'people') && (
-          <DisplayForm data={data} app={app} name={name} />
-        )}
-
-        {app === 'resources' && <DisplayWidget data={data} name={name} />}
       </div>
     )
   }
