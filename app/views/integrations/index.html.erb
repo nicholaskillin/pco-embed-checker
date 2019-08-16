@@ -1,15 +1,18 @@
 <% if @integrations.any? %>
   <ul class="sidebar-list">
     <% @integrations.each do |i| %>
-      <li class="sidebar-item" style="display: flex;">
-        <%= link_to "<i class=\"material-icons delete-icon\">delete</i>".html_safe,
+      <li class="sidebar-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+        <div style="width: 24px; height: 24px; display: inline-block; margin-right: 8px;">
+          <%= embedded_svg("#{i.app}") %>
+        </div>
+
+        <%= link_to i.name, i %>
+        <%= link_to "x".html_safe,
           integration_path(i),
           method: :delete,
           data: { confirm: 'Are you sure you want to delete this?' },
-          class: "delete-link",
-          style: "display: inline-block; margin: -3px 4px 0 0;"
+          class: "btn ml-1 p-0!"
         %>
-        <%= link_to i.name, i %>
       </li>
     <% end %>
   </ul>
