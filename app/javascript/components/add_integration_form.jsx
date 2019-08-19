@@ -24,7 +24,7 @@ export default class AddIntegrationForm extends React.Component {
 
   render() {
     const token = $('meta[name="csrf-token"]').attr("content");
-    const { data, app, name, error, hasInitialState } = this.state
+    const { data, app, name, error, errors, hasInitialState } = this.state
     const dataArray = data.split('/')
 
     const handleSubmit = e => {
