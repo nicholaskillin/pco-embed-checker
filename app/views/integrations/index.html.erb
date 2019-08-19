@@ -1,5 +1,25 @@
-<div class="row">
-  <div class="col-sm-8">
-    <%= react_component("add_integration_form") %>
+<% if @integrations.any? %>
+  <div class="px-4 py-2">
+    <h1>My Saved Integrations</h1>
+    <div class="pl-2">
+      <% @integrations.each do |i| %>
+        <div class="integration-link">
+          <%= link_to i, class: "app" do %>
+            <span class="icon">
+              <%= embedded_svg(i.app) %>
+            </span>
+            <%= i.name %>
+          <% end %>
+          <%= link_to(
+            integration_path(i),
+            method: :delete,
+            data: { confirm: 'Are you sure you want to delete this?' },
+            class: "delete"
+          ) do %>
+            <%= embedded_svg('close') %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

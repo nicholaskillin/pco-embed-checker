@@ -1,0 +1,40 @@
+input, textarea {
+  border:1px solid $gray_400;
+  background: $gray_25;
+  border-radius: 4px;
+  color: $gray_700;
+
+  &:focus {
+    border: 1px solid $azure;
+    outline: none;
+    background: #fff;
+  }
+
+  &.error {
+    border: 1px solid $red;
+    background: #fff;
+  }
+}
+
+input[type="text"] {
+	min-height: 40px;
+  padding: 0 8px;
+}
+
+textarea {
+  padding: 8px;
+}
+
+label {
+  color: $gray_800;
+  font-size: 1.1em;
+  font-weight: 700;
+
+  span {
+    font-weight: 400;
+    font-size: .95rem;
+    color: $gray_600;
+    display: block;
+    margin: 2px 0 4px 0;
+  }
+}

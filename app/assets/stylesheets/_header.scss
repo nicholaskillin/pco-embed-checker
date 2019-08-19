@@ -1,0 +1,25 @@
+header {
+  height: 220px;
+  width: 100%;
+  background: $royal_blue;
+  background: linear-gradient(180deg, $royal_blue 0%, $azure 100%);
+}
+
+nav {
+  background: $light_cyan;
+  box-sizing: border-box;
+  padding: .75em 1em;
+
+  a {
+    text-decoration: none;
+    color: darken($royal_blue, 15%);
+    padding: 2px 8px 3px 8px;
+    border-radius: 12px;
+    transition: .2s ease background-color;
+
+    &:hover,
+    &.selected {
+      background-color: rgba($azure, .1);
+    }
+  }
+}
