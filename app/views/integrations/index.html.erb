@@ -4,12 +4,13 @@
     <div class="pl-2">
       <% @integrations.each do |i| %>
         <div class="integration-link">
-          <%= link_to i, class: "app" do %>
+          <%= link_to i, class: "app", data: { :turbolinks => false } do %>
             <span class="icon">
               <%= embedded_svg(i.app) %>
             </span>
             <%= i.name %>
           <% end %>
+
           <%= link_to(
             integration_path(i),
             method: :delete,
