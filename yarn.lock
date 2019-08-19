@@ -693,7 +693,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5":
+"@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
@@ -781,6 +781,13 @@
     webpack-assets-manifest "^3.1.1"
     webpack-cli "^3.3.2"
     webpack-sources "^1.3.0"
+
+"@tanem/svg-injector@^8.0.26":
+  version "8.0.26"
+  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-8.0.26.tgz#f45c0b9c5c2d7ae025a8550c45eefb1233de349e"
+  integrity sha512-6jOgu1z/SjShOND+LO62kIVylSMwv8jQkncMX5e1eT0KdQF99v74sfH30CvGNPFYa7LG3qn7cDfF76qePbXEFw==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
 
 "@types/events@*":
   version "3.0.0"
@@ -5769,6 +5776,15 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-svg@^10.0.18:
+  version "10.0.18"
+  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-10.0.18.tgz#8c90dc87db749334af980eb56706419baa6329ed"
+  integrity sha512-ABw8gn4yWHK1DT5mFpvCByaGCyXoK9hKPM5gQDVUzB2g6JVJ5jIzVD14ndpqmdMHMU8TLjhJF0IUboZ/7WvAZw==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@tanem/svg-injector" "^8.0.26"
+    prop-types "^15.7.2"
 
 react@^16.9.0:
   version "16.9.0"
