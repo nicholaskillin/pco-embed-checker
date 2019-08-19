@@ -24,7 +24,7 @@ export default class AddIntegrationForm extends React.Component {
   render() {
     const token = $('meta[name="csrf-token"]').attr("content");
     const { data, app, name, error, hasInitialState } = this.state
-    const dataArray = data.split('/')
+    const dataArray = data.split("/").filter(data => data.trim() != "")
 
     const handleSubmit = e => {
       e.preventDefault()
@@ -64,18 +64,18 @@ export default class AddIntegrationForm extends React.Component {
       e.preventDefault()
       this.setState({ app: '', data: '', name: '', error: false })
     }
-
+    
     const setDataType = () => {
-      if (dataArray[dataArray.length - 1].includes("giving")) {
-        this.setState({ app: "giving", error: false })
-      } else if (dataArray[dataArray.length - 3] === "people") {
-        this.setState({ app: "people", error: false })
-      } else if (dataArray[dataArray.length - 4].includes("resources")) {
-        this.setState({ app: "resources", error: false })
-      } else {
-        this.setState({ app: '', error: true })
-      }
-    }
+			if (dataArray[2].includes("giving")) {
+				this.setState({ app: "giving", error: false })
+			} else if (dataArray[2] === "people") {
+				this.setState({ app: "people", error: false })
+			} else if (dataArray[5].includes("resources")) {
+				this.setState({ app: "resources", error: false })
+			} else {
+				this.setState({ app: "", error: true })
+			}
+		}
 
     return (
       <div className="d-f fd-c p-2">
