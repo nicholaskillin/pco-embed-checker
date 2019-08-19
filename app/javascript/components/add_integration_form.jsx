@@ -10,6 +10,7 @@ export default class AddIntegrationForm extends React.Component {
       app: this.props.app || '',
       data: this.props.data || '',
       error: false,
+      errors: '',
       hasInitialState: false,
       name: this.props.name || '',
     }
@@ -49,7 +50,7 @@ export default class AddIntegrationForm extends React.Component {
           Turbolinks.visit("/integrations", { "action": "replace" })
         })
         .catch(function (error) {
-          this.setState({ error: true })
+          this.setState({ errors: error })
         })
     }
 
@@ -130,13 +131,20 @@ export default class AddIntegrationForm extends React.Component {
         {app === 'resources' && <DisplayWidget data={data} name={name} />}
 
         {(app != "" && !hasInitialState) && (
-          <div className="d-b mt-3">
-            <button className="btn btn--primary mr-1" onClick={handleSubmit}>
-              Save Integration
+          <div>
+            {errors && (
+              <div className="d-f fd-c mb-2">
+                <div className="error mt-2 px-2 py-1 d-ib">{errors}</div>
+              </div>
+            )}
+            <div className="d-b mt-3">
+              <button className="btn btn--primary mr-1" onClick={handleSubmit}>
+                Save Integration
               </button>
-            <button className="btn btn--secondary" onClick={handleClear}>
-              Start Over
+              <button className="btn btn--secondary" onClick={handleClear}>
+                Start Over
   						</button>
+            </div>
           </div>
         )}
       </div>
