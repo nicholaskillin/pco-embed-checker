@@ -3,6 +3,7 @@ body {
 	font-size: 100%;
 	font-family: 'Lato', sans-serif;
 	background: $gray_200;
+	color: $gray_900;
 }
 
 .container {
@@ -19,8 +20,8 @@ body {
 }
 
 .error {
-	border: 1px solid red;
-	color: red;
+	border: 1px solid $red;
+	color: $red;
 	border-radius: 4px;
-	background: rgba(red, .15);
+	background: rgba($red, .20);
 }

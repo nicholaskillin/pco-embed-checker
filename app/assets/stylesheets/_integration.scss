@@ -1,7 +1,7 @@
 .integration-details {
   padding: 1.5em;
   border: 1px solid $gray_300;
-  background: #fff;
+  background: $gray_25;
   box-shadow: 0 5px 10px -5px  $gray_400;
   border-radius: 6px;
   overflow: hidden;
@@ -17,5 +17,66 @@
     width: 24px;
     display: inline-block;
     margin: 0 4px 0 0;
+  }
+}
+
+.integration-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+
+  a.app {
+    display: flex;
+    align-items: center;
+    color: $gray_800;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .2s all ease;
+
+    &:hover {
+      color: $gray_700;
+    }
+
+    svg {
+      height: 32px;
+      width: 32px;
+      display: inline-block;
+      margin: 0 8px 0 0;
+    }
+  }
+
+  $deleteLinkSize: 20;
+
+  a.delete {
+    display: inline-flex;
+    width: #{$deleteLinkSize}px;
+    height: #{$deleteLinkSize}px;
+    background: $gray_300;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+
+    & * {
+      transition: .2s ease all;
+    }
+
+    svg {
+      width: #{$deleteLinkSize - 10}px;
+      height: #{$deleteLinkSize - 10}px;
+      display: inline-block;
+
+      * {
+        fill: $gray_700;
+      }
+    }
+
+    &:hover {
+      background: $gray_400;
+
+      svg * {
+        fill: $gray_800;
+      }
+    }
   }
 }
