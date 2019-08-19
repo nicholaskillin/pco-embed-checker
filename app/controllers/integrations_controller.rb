@@ -1,6 +1,6 @@
 class IntegrationsController < ApplicationController
   def index
-    @integrations = current_user.integrations
+    @integrations = current_user.integrations.order(created_at: :desc)
   end
 
   def show
