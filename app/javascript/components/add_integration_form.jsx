@@ -84,7 +84,8 @@ export default class AddIntegrationForm extends React.Component {
             <div className="mb-2">
               <div className="d-f fd-c mb-2">
   							<label htmlFor="name" className="mb-4p">
-  								Name
+  								Integration Name
+                  <span>something you can reference later...</span>
   							</label>
   							<input
   								name="name"
@@ -96,7 +97,8 @@ export default class AddIntegrationForm extends React.Component {
 
               <div className="d-f fd-c">
   							<label htmlFor="data" className="mb-4p">
-  								Paste Code Here
+  								Integration Code
+                  <span>Copy & paste Giving/People form or Resources widget...</span>
   							</label>
   							<textarea
   								name="data"
@@ -128,7 +130,14 @@ export default class AddIntegrationForm extends React.Component {
           {app === 'resources' && <DisplayWidget data={data} name={name} />}
 
           {(app != "" && !hasInitialState) && (
-            <button type="submit">Save</button>
+            <div className="d-b mt-3">
+  						<button className="btn btn--primary mr-1" onClick={handleSubmit}>
+                Save Integration
+              </button>
+  						<button className="btn btn--secondary" onClick={handleClear}>
+  							Start Over
+  						</button>
+  					</div>
           )}
         </form>
       </div>

@@ -2,16 +2,10 @@
 <svg version="1.1" id="people-badge" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <style type="text/css">
-	.people0{fill:url(#people);}
+	.people0{fill:#5781CF;}
 	.people1{fill:#FFFFFF;}
 </style>
 <g>
-
-		<linearGradient id="people" gradientUnits="userSpaceOnUse" x1="-643.3765" y1="5.102174e-07" x2="-642.3765" y2="5.102174e-07" gradientTransform="matrix(399.9989 399.9989 399.9989 -399.9989 257405.9062 257405.9062)">
-		<stop  offset="0" style="stop-color:#419CD6"/>
-		<stop  offset="0.9929" style="stop-color:#4672B8"/>
-		<stop  offset="1" style="stop-color:#4672B8"/>
-	</linearGradient>
 	<path class="people0" d="M256,6C156,6,93.5,18.5,56,56S6,156,6,256c0,100,12.5,162.5,50,200s100,50,200,50c100,0,162.5-12.5,200-50
 		s50-100,50-200c0-100-12.5-162.5-50-200S356,6,256,6z"/>
 	<path class="people1" d="M217.9,155.6c13,0,24.8,5.3,33.3,13.8s13.8,20.3,13.8,33.3c0,13-5.3,24.8-13.8,33.3s-20.3,13.8-33.3,13.8
