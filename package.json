@@ -11,10 +11,10 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-svg": "^10.0.18",
     "react_ujs": "^2.6.0"
   },
   "devDependencies": {
-    "react-svg": "^10.0.18",
     "webpack-dev-server": "^3.8.0"
   }
 }
