@@ -64,7 +64,7 @@ export default class AddIntegrationForm extends React.Component {
       e.preventDefault()
       this.setState({ app: '', data: '', name: '', error: false })
     }
-    
+
     const setDataType = () => {
 			if (dataArray[2].includes("giving")) {
 				this.setState({ app: "giving", error: false })
@@ -78,7 +78,7 @@ export default class AddIntegrationForm extends React.Component {
 		}
 
     return (
-      <div className="d-f fd-c p-2">
+      <div className="d-f fd-c">
         <form onSubmit={handleSubmit}>
           {app == "" && (
             <div className="mb-2">

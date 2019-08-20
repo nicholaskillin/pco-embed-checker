@@ -1,13 +1,11 @@
-<div class="row">
-  <div class="col-sm-8">
-    <%=
-      react_component("add_integration_form",
-        {
-          app: @integration.app,
-          data: @integration.data,
-          name: @integration.name
-        }
-      )
-    %>
-  </div>
+<div class="p-1">
+  <%=
+    react_component("add_integration_form",
+      {
+        app: @integration.app,
+        data: @integration.data,
+        name: @integration.name
+      }
+    )
+  %>
 </div>

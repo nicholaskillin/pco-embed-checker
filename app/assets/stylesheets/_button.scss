@@ -19,5 +19,11 @@
     &:hover {
       background: lighten($royal_blue, 5%);
     }
+
+    &:disabled {
+      background: $gray_300;
+      color: $gray_600;
+      cursor: not-allowed;
+    }
   }
 }
