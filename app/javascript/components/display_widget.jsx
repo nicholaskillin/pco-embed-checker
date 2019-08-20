@@ -1,32 +1,43 @@
 import React from "react"
-import { Helmet } from "react-helmet"
+import { string } from "prop-types"
 
-export default function DisplayWidget(props) {
-	const { data, name } = props
-	let dataArray = data.split('</div>')
+export default class DisplayWidget extends React.Component {
+	static propTypes = {
+		data: string.isRequired,
+		name: string.isRequired,
+	}
 
-	const isolateScript = dataArray[dataArray.length - 1]
-		.replace('<script type="text/javascript">', '')
-		.replace('</script>', '')
+	constructor(props) {
+		super(props)
 
-	return (
-		<div className="integration-details">
-			<Helmet
-				script={[
-					{
-						type: 'text/javascript',
-						innerHTML: isolateScript,
-					},
-				]}
-			/>
+		this.state = {
+			hasScript: true,
+		}
+	}
 
-      <div className="d-f ai-c jc-fs mb-2">
-				<h2>{name}</h2>
+	componentDidMount() {
+		const dataArray = this.props.data.split('"')
+
+		const script = document.createElement("script")
+		script.src = dataArray[dataArray.length - 4]
+		script.async = true
+
+		document.body.appendChild(script)
+	}
+
+	render() {
+		const { name } = this.props
+
+		return (
+			<div className="integration-details">
+				<div className="d-f ai-c jc-fs mb-2">
+					<h2>{name}</h2>
+				</div>
+
+				<div id="resources_calendar_widget" className="styled">
+					<div className="loader">Loading...</div>
+				</div>
 			</div>
-
-			<div id="resources_calendar_widget" className="styled">
-				<div className="loader">Loading...</div>
-			</div>
-		</div>
-	)
+		)
+	}
 }
