@@ -4,7 +4,7 @@
     <div class="pl-2">
       <% @integrations.each do |i| %>
         <div class="integration-link">
-          <%= link_to i, class: "app", data: { :turbolinks => false } do %>
+          <%= link_to i, class: "app" do %>
             <span class="icon">
               <%= embedded_svg(i.app) %>
             </span>
