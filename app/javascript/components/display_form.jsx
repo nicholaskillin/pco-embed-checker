@@ -20,11 +20,11 @@ export default function DisplayForm(props) {
 					},
 				]}
 			/>
-      <div className="d-f ai-c jc-fs mb-2">
-        <div className="p-r mr-4p" style={{top: 3}}>
-          {app === "giving" && <ReactSVG src={GivingBadge} />}
-          {app === "people" && <ReactSVG src={PeopleBadge} />}
-        </div>
+			<div className="d-f ai-c jc-fs mb-2">
+				<div className="p-r" style={{ top: 2 }}>
+					{app === "giving" && <ReactSVG src={GivingBadge} />}
+					{app === "people" && <ReactSVG src={PeopleBadge} />}
+				</div>
 				<h2>{name}</h2>
 			</div>
 

@@ -3,15 +3,17 @@
 		<%= embedded_svg("logo") %>
 	</div>
 
-	<nav class="d-f fd-c fd-r@sm ai-c@sm jc-fs jc-sb@sm px-2 py-1">
-		<div class="mb-1 mb-0@sm">
-			<%= link_to "Create New", "/", class: "mr-1" %>
-			<%= link_to "My  Saved Integrations", "/integrations" %>
-		</div>
-		<div>
-			<p class="m-0 mr-4p">
-				Logged in as: <strong><%= current_user.name %></strong>
-			</p>
-		</div>
-	</nav>
+	<% if logged_in? %>
+		<nav class="d-f fd-c fd-r@sm ai-c@sm jc-fs jc-sb@sm px-2 py-1">
+			<div class="mb-1 mb-0@sm">
+				<%= link_to "Create New", "/", class: "mr-1" %>
+				<%= link_to "My  Saved Integrations", "/integrations" %>
+			</div>
+			<div>
+				<p class="m-0 mr-4p">
+					Logged in as: <strong><%= current_user.name %></strong>
+				</p>
+			</div>
+		</nav>
+	<% end %>
 </header>

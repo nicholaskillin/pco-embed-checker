@@ -7,12 +7,12 @@ export default class AddIntegrationForm extends React.Component {
     super(props)
 
     this.state = {
+      name: this.props.name || '',
       app: this.props.app || '',
       data: this.props.data || '',
       error: false,
       errors: '',
       hasInitialState: false,
-      name: this.props.name || '',
     }
   }
 
@@ -25,7 +25,7 @@ export default class AddIntegrationForm extends React.Component {
   render() {
     const token = $('meta[name="csrf-token"]').attr("content");
     const { data, app, name, error, errors, hasInitialState } = this.state
-    const dataArray = data.split("/").filter(data => data.trim() != "")
+    const dataArray = data.split('/').filter(data => data.trim() != "")
 
     const handleSubmit = e => {
       e.preventDefault()
