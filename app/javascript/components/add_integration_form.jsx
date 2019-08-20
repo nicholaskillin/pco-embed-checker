@@ -7,24 +7,25 @@ export default class AddIntegrationForm extends React.Component {
     super(props)
 
     this.state = {
-      data: this.props.data || '',
       app: this.props.app || '',
-      name: this.props.name || '',
+      data: this.props.data || '',
       error: false,
+      errors: '',
       hasInitialState: false,
+      name: this.props.name || '',
     }
   }
 
   componentDidMount() {
-    if(this.props.name) {
-      this.setState({ hasInitialState: true})
+    if (this.props.name) {
+      this.setState({ hasInitialState: true })
     }
   }
 
   render() {
     const token = $('meta[name="csrf-token"]').attr("content");
-    const { data, app, name, error, hasInitialState } = this.state
-    const dataArray = data.split("/").filter(data => data.trim() != "")
+    const { data, app, name, error, errors, hasInitialState } = this.state
+    const dataArray = data.split('/').filter(data => data.trim() != "")
 
     const handleSubmit = e => {
       e.preventDefault()
@@ -45,10 +46,11 @@ export default class AddIntegrationForm extends React.Component {
         body: body,
         credentials: "same-origin"
       })
-        .then(response => response.json())
-        .then(data => console.log(data))
+        .then(response => {
+          Turbolinks.visit("/integrations", { "action": "replace" })
+        })
         .catch(function (error) {
-          console.log(error)
+          this.setState({ errors: error })
         })
     }
 
@@ -78,68 +80,73 @@ export default class AddIntegrationForm extends React.Component {
 		}
 
     return (
-      <div className="d-f fd-c">
-        <form onSubmit={handleSubmit}>
-          {app == "" && (
-            <div className="mb-2">
-              <div className="d-f fd-c mb-2">
-  							<label htmlFor="name" className="mb-4p">
-  								Integration Name
+      <div className="d-f fd-c p-2">
+        {app == "" && (
+          <div className="mb-2">
+            <div className="d-f fd-c mb-2">
+              <label htmlFor="name" className="mb-4p">
+                Integration Name
                   <span>something you can reference later...</span>
-  							</label>
-  							<input
-  								name="name"
-  								value={name}
-  								onChange={handleUpdateName}
-  								type="text"
-  							/>
-  						</div>
-
-              <div className="d-f fd-c">
-  							<label htmlFor="data" className="mb-4p">
-  								Integration Code
-                  <span>Copy & paste Giving/People form or Resources widget...</span>
-  							</label>
-  							<textarea
-  								name="data"
-  								rows="8"
-  								cols="30"
-  								value={data}
-  								onChange={handleUpdateData}
-  							/>
-
-  							{error && (
-  								<div className="error mt-2 px-2 py-1 d-ib">invalid format</div>
-  							)}
-  						</div>
-
-              <button
-  							onClick={setDataType}
-  							disabled={!data}
-  							className="mt-2 btn btn--primary"
-  						>
-  							Show Integration
-  						</button>
+              </label>
+              <input
+                name="name"
+                value={name}
+                onChange={handleUpdateName}
+                type="text"
+              />
             </div>
-          )}
 
-          {(app === 'giving' || app === 'people') && (
-            <DisplayForm data={data} app={app} name={name} />
-          )}
+            <div className="d-f fd-c">
+              <label htmlFor="data" className="mb-4p">
+                Integration Code
+                  <span>Copy & paste Giving/People form or Resources widget...</span>
+              </label>
+              <textarea
+                name="data"
+                rows="8"
+                cols="30"
+                value={data}
+                onChange={handleUpdateData}
+              />
 
-          {app === 'resources' && <DisplayWidget data={data} name={name} />}
+              {error && (
+                <div className="error mt-2 px-2 py-1 d-ib">Invalid format</div>
+              )}
+            </div>
 
-          {(app != "" && !hasInitialState) && (
+            <button
+              onClick={setDataType}
+              disabled={!data}
+              className="mt-2 btn btn--primary"
+            >
+              Show Integration
+  					</button>
+          </div>
+        )}
+
+        {(app === 'giving' || app === 'people') && (
+          <DisplayForm data={data} app={app} name={name} />
+        )}
+
+        {app === 'resources' && <DisplayWidget data={data} name={name} />}
+
+        {(app != "" && !hasInitialState) && (
+          <div>
+            {errors && (
+              <div className="d-f fd-c mb-2">
+                <div className="error mt-2 px-2 py-1 d-ib">{errors}</div>
+              </div>
+            )}
             <div className="d-b mt-3">
-  						<button className="btn btn--primary mr-1" onClick={handleSubmit}>
+              <button className="btn btn--primary mr-1" onClick={handleSubmit}>
                 Save Integration
               </button>
-  						<button className="btn btn--secondary" onClick={handleClear}>
-  							Start Over
+              <button className="btn btn--secondary" onClick={handleClear}>
+                Start Over
   						</button>
-  					</div>
-          )}
-        </form>
+            </div>
+          </div>
+        )}
       </div>
     )
   }
