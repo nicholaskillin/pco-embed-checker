@@ -7,12 +7,12 @@ export default class AddIntegrationForm extends React.Component {
     super(props)
 
     this.state = {
+      name: this.props.name || '',
       app: this.props.app || '',
       data: this.props.data || '',
       error: false,
       errors: '',
       hasInitialState: false,
-      name: this.props.name || '',
     }
   }
 
