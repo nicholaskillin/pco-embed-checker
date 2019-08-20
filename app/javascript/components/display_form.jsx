@@ -7,7 +7,7 @@ import PeopleBadge from '../../assets/images/people.svg'
 import ResourcesBadge from '../../assets/images/resources.svg'
 
 export default function DisplayForm(props) {
-  const { data, app, name } = props
+	const { data, app, name } = props
 	const script = `https://js.churchcenter.com/modal/v1`
 	const url = data.replace(/\s/g, '')
 
@@ -21,16 +21,16 @@ export default function DisplayForm(props) {
 					},
 				]}
 			/>
-      <div className="d-f ai-c jc-fs mb-2">
-        <div className="p-r" style={{top: 2}}>
-          {app.name === "giving" && <ReactSVG src={GivingBadge} />}
-          {app.name === "people" && <ReactSVG src={PeopleBadge} />}
-          {app.name === "resources" && <ReactSVG src={ResourcesBadge} />}
-        </div>
+			<div className="d-f ai-c jc-fs mb-2">
+				<div className="p-r" style={{ top: 2 }}>
+					{app.name === "giving" && <ReactSVG src={GivingBadge} />}
+					{app.name === "people" && <ReactSVG src={PeopleBadge} />}
+					{app.name === "resources" && <ReactSVG src={ResourcesBadge} />}
+				</div>
 				<h2>{name}</h2>
 			</div>
 
-      <div className="d-f">
+			<div className="d-f">
 				<a
 					href={url}
 					data-open-in-church-center-modal="true"
