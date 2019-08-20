@@ -80,13 +80,12 @@ export default class AddIntegrationForm extends React.Component {
     }
 
     return (
-      <div className="d-f fd-c">
-        <form onSubmit={handleSubmit}>
-          {app == "" && (
-            <div className="mb-2">
-              <div className="d-f fd-c mb-2">
-  							<label htmlFor="name" className="mb-4p">
-  								Integration Name
+      <div className="d-f fd-c p-2">
+        {app == "" && (
+          <div className="mb-2">
+            <div className="d-f fd-c mb-2">
+              <label htmlFor="name" className="mb-4p">
+                Integration Name
                   <span>something you can reference later...</span>
               </label>
               <input
