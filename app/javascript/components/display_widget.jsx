@@ -1,32 +1,42 @@
 import React from "react"
-import { Helmet } from "react-helmet"
+import { string } from "prop-types"
+import ReactSVG from "react-svg"
 
-export default function DisplayWidget(props) {
-  const { data, name } = props
-	let dataArray = data.split('</div>')
+import ResourcesBadge from '../../assets/images/resources.svg'
 
-	const isolateScript = dataArray[dataArray.length - 1]
-		.replace('<script type="text/javascript">', '')
-		.replace('</script>', '')
+export default class DisplayWidget extends React.Component {
+	static propTypes = {
+		data: string.isRequired,
+		name: string.isRequired,
+	}
 
-	return (
-		<div className="integration-details">
-			<Helmet
-				script={[
-					{
-						type: 'text/javascript',
-						innerHTML: isolateScript,
-					},
-				]}
-			/>
+	componentDidMount() {
+		const dataArray = this.props.data.split('"')
 
-      <div className="d-f ai-c jc-fs mb-2">
-				<h2>{name}</h2>
+		const script = document.createElement("script")
+		script.src = dataArray[dataArray.length - 4]
+		script.async = true
+
+		document.body.appendChild(script)
+	}
+
+	render() {
+		const { name } = this.props
+
+		return (
+			<div className="integration-details">
+				<div className="d-f ai-c jc-fs mb-2">
+					<div className="p-r mr-4p" style={{top: 3}}>
+	          <ReactSVG src={ResourcesBadge} />
+	        </div>
+					
+					<h2>{name}</h2>
+				</div>
+
+				<div id="resources_calendar_widget" className="styled">
+					<div className="loader">Loading...</div>
+				</div>
 			</div>
-
-			<div id="resources_calendar_widget" className="styled">
-				<div className="loader">Loading...</div>
-			</div>
-		</div>
-	)
+		)
+	}
 }
