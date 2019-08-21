@@ -10,11 +10,11 @@ It's running on Ruby 2.6.1 with Rails 5.2.2.
 
 You can get started by cloning this repo using:
 
-    git clone https://github.com/nicholaskillin/carlsbad_site.git
+    git clone https://github.com/nicholaskillin/pco-integration-checker.git
 
 Change directory to the new app
 
-    cd carlsbad_site
+    cd pco-integration-checker
 
 ## Setup your database
 
@@ -24,7 +24,7 @@ Change directory to the new app
 
 ## Setup oAuth
 You will need to setup your own oAuth client ID and secret to use in Development. Here are the steps required to do that.
-    
+
 - Go to https://api.planningcenteronline.com
 - Click on "New Application" under the "My Developer Applications" section
 - The App name, description and Url don't really matter. For the `Authorization callback URLs` you will need to use `http://localhost:3000/auth/planning_center/callback` on the first line and `https://pco-integration-checker.herokuapp.com/auth/planning_center/callback` on the second line.
