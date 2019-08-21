@@ -80,13 +80,13 @@ export default class AddIntegrationForm extends React.Component {
     }
 
     return (
-      <div className="d-f fd-c p-2">
+      <div className="d-f fd-c">
         {app == "" && (
           <div className="mb-2">
             <div className="d-f fd-c mb-2">
               <label htmlFor="name" className="mb-4p">
                 Integration Name
-                  <span>something you can reference later...</span>
+                  <span>Something you can reference later</span>
               </label>
               <input
                 name="name"
@@ -99,7 +99,7 @@ export default class AddIntegrationForm extends React.Component {
             <div className="d-f fd-c">
               <label htmlFor="data" className="mb-4p">
                 Integration Code
-                  <span>Copy & paste Giving/People form or Resources widget...</span>
+                  <span>Copy & paste a Giving/People form or Resources Widget here</span>
               </label>
               <textarea
                 name="data"
@@ -110,7 +110,7 @@ export default class AddIntegrationForm extends React.Component {
               />
 
               {error && (
-                <div className="error mt-2 px-2 py-1 d-ib">Invalid format</div>
+                <div className="alert alert-error mt-2">Invalid format</div>
               )}
             </div>
 
@@ -134,7 +134,7 @@ export default class AddIntegrationForm extends React.Component {
           <div>
             {errors && (
               <div className="d-f fd-c mb-2">
-                <div className="error mt-2 px-2 py-1 d-ib">{errors}</div>
+                <div className="alert alert-error mt-2">{errors}</div>
               </div>
             )}
             <div className="d-b mt-3">
