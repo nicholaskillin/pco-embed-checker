@@ -11,7 +11,7 @@ export default function DisplayForm(props) {
 	const url = data.replace(/\s/g, '')
 
 	return (
-		<div className="integration-details">
+		<div className="integration-details d-f fd-c fd-r@md jc-sb@md ai-c@md">
 			<Helmet
 				script={[
 					{
@@ -20,7 +20,7 @@ export default function DisplayForm(props) {
 					},
 				]}
 			/>
-			<div className="d-f ai-c jc-fs mb-2">
+			<div className="d-f ai-c jc-fs f-1">
 				<div className="p-r" style={{ top: 2 }}>
 					{app === "giving" && <ReactSVG src={GivingBadge} />}
 					{app === "people" && <ReactSVG src={PeopleBadge} />}
@@ -28,11 +28,11 @@ export default function DisplayForm(props) {
 				<h2>{name}</h2>
 			</div>
 
-			<div className="d-f">
+			<div className="d-b d-ib@md mt-3 mt-0@md">
 				<a
 					href={url}
 					data-open-in-church-center-modal="true"
-					className="btn btn--primary mr-1"
+					className="btn btn--secondary btn--sm mr-2"
 				>
 					Open modal
 				</a>
@@ -40,7 +40,7 @@ export default function DisplayForm(props) {
 					href={url}
 					rel="noopener noreferrer"
 					target="_blank"
-					className="btn btn--primary"
+					className="btn btn--secondary btn--sm"
 				>
 					Open new tab
 				</a>

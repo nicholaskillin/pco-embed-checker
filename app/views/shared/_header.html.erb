@@ -1,17 +1,18 @@
 <header class="d-f fd-c jc-sb">
-	<div class="d-f jc-c ai-c f-1">
+	<div class="d-f jc-c ai-c f-1 pt-1">
 		<%= embedded_svg("logo") %>
 	</div>
 
 	<% if logged_in? %>
-		<nav class="d-f fd-c fd-r@sm ai-c@sm jc-fs jc-sb@sm px-2 py-1">
-			<div class="mb-1 mb-0@sm">
+		<nav class="d-f fd-c fd-r@sm ai-c@sm jc-fs jc-sb@sm">
+			<div class="d-if jc-c jc-fs@sm my-1 pb-1 my-0@sm p-0@sm">
 				<%= link_to "Create New", "/", class: "mr-1" %>
 				<%= link_to "My  Saved Integrations", "/integrations" %>
 			</div>
-			<div>
-				<p class="m-0 mr-4p">
-					Logged in as: <strong><%= current_user.name %></strong>
+
+			<div class="d-if jc-c jc-fs@sm mb-1 m-0@sm">
+				<p class="m-0 pr-4p c-gray_500">
+					Logged in as: <strong class="c-white"><%= current_user.name %></strong>
 				</p>
 			</div>
 		</nav>

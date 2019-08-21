@@ -7,29 +7,21 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   min-height: 100vh;
 	height: 100%;
   background: #fff;
 	padding-bottom: 2em;
 
-  @include breakpoints(from-sm) {
+  @include breakpoints(from-xs) {
+		width: 90%;
     max-width: 1000px;
+		box-shadow: 0 0 5px 3px $gray_300;
   }
 }
 
-.error {
-	border: 1px solid $red;
-	color: $red;
-	border-radius: 4px;
-	background: rgba($red, .20);
+h1 {
+	color: $royal_blue;
+	font-weight: 400;
 }
-
-.alert-success {
-	border: 1px solid $green;
-	color: $green;
-	border-radius: 4px;
-	background: rgba($green, .20);
-}
-

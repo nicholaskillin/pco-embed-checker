@@ -1,7 +1,11 @@
+<% flash.each do | message_type, message| %>
+  <div class="alert alert--<%= message_type %> fadeOut"><%= message %></div>
+<% end %>
+
 <% if @integrations.any? %>
-  <div class="px-4 py-2">
-    <h1>My Saved Integrations</h1>
-    <div class="pl-2">
+  <div>
+    <h1 class="m-0 pb-2">My Saved Integrations</h1>
+    <div class="pl-2@sm mt-1">
       <% @integrations.each do |i| %>
         <div class="integration-link">
           <%= link_to i, class: "app" do %>
