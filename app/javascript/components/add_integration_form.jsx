@@ -110,7 +110,7 @@ export default class AddIntegrationForm extends React.Component {
               />
 
               {error && (
-                <div className="alert alert-error mt-2">Invalid format</div>
+                <div className="alert alert--error mt-2">Invalid format</div>
               )}
             </div>
 
@@ -134,7 +134,7 @@ export default class AddIntegrationForm extends React.Component {
           <div>
             {errors && (
               <div className="d-f fd-c mb-2">
-                <div className="alert alert-error mt-2">{errors}</div>
+                <div className="alert alert--error mt-2">{errors}</div>
               </div>
             )}
             <div className="d-b mt-3">
