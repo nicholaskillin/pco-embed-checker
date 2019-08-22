@@ -2,7 +2,7 @@ import React from "react"
 import DisplayForm from "./display_form"
 import DisplayWidget from "./display_widget"
 
-export default class AddIntegrationForm extends React.Component {
+export default class AddEmbedForm extends React.Component {
   constructor(props) {
     super(props)
 
@@ -30,13 +30,13 @@ export default class AddIntegrationForm extends React.Component {
     const handleSubmit = e => {
       e.preventDefault()
       let body = JSON.stringify({
-        integration: {
+        embed: {
           name: this.state.name,
           data: this.state.data,
           app: this.state.app
         }
       })
-      fetch("api/v1/integrations", {
+      fetch("api/v1/embeds", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default class AddIntegrationForm extends React.Component {
         credentials: "same-origin"
       })
         .then(response => {
-          Turbolinks.visit("/integrations", { "action": "replace" })
+          Turbolinks.visit("/embeds", { "action": "replace" })
         })
         .catch(function (error) {
           this.setState({ errors: error })
@@ -85,7 +85,7 @@ export default class AddIntegrationForm extends React.Component {
           <div className="mb-2">
             <div className="d-f fd-c mb-2">
               <label htmlFor="name" className="mb-4p">
-                Integration Name
+                Embed Name
                   <span>Something you can reference later</span>
               </label>
               <input
@@ -98,7 +98,7 @@ export default class AddIntegrationForm extends React.Component {
 
             <div className="d-f fd-c">
               <label htmlFor="data" className="mb-4p">
-                Integration Code
+                Embed Code
                   <span>Copy & paste a Giving/People form or Resources Widget here</span>
               </label>
               <textarea
@@ -107,6 +107,7 @@ export default class AddIntegrationForm extends React.Component {
                 cols="30"
                 value={data}
                 onChange={handleUpdateData}
+                placeholder="Ex: https://carlsbad.churchcenter.com/giving"
               />
 
               {error && (
@@ -119,7 +120,7 @@ export default class AddIntegrationForm extends React.Component {
               disabled={!data}
               className="mt-2 btn btn--primary"
             >
-              Show Integration
+              Show Embed
   					</button>
           </div>
         )}
@@ -139,7 +140,7 @@ export default class AddIntegrationForm extends React.Component {
             )}
             <div className="d-b mt-3">
               <button className="btn btn--primary mr-1" onClick={handleSubmit}>
-                Save Integration
+                Save Embed
               </button>
               <button className="btn btn--secondary" onClick={handleClear}>
                 Start Over
