@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_164612) do
+ActiveRecord::Schema.define(version: 2019_08_22_151433) do
 
-  create_table "integrations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "embeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "data"
     t.string "app"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_integrations_on_user_id"
+    t.index ["user_id"], name: "index_embeds_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -30,5 +30,5 @@ ActiveRecord::Schema.define(version: 2019_08_15_164612) do
     t.string "uid"
   end
 
-  add_foreign_key "integrations", "users"
+  add_foreign_key "embeds", "users"
 end
