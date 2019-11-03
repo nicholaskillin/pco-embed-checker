@@ -10,19 +10,11 @@ It's running on Ruby 2.6.1 with Rails 5.2.2.
 
 You can get started by cloning this repo using:
 
-<<<<<<< HEAD
-    git clone https://github.com/nicholaskillin/pco-integration-checker.git
-
-Change directory to the new app
-
-    cd pco-integration-checker
-=======
     git clone https://github.com/nicholaskillin/pco-embed-checker.git
 
 Change directory to the new app
 
     cd pco-embed-checker
->>>>>>> master
 
 ## Setup your database
 

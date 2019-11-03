@@ -85,11 +85,7 @@ export default class AddIntegrationForm extends React.Component {
           <div className="mb-2">
             <div className="d-f fd-c mb-2">
               <label htmlFor="name" className="mb-4p">
-<<<<<<< HEAD
-                Integration Name
-=======
                 Embed Name
->>>>>>> master
                   <span>Something you can reference later</span>
               </label>
               <input
@@ -102,11 +98,7 @@ export default class AddIntegrationForm extends React.Component {
 
             <div className="d-f fd-c">
               <label htmlFor="data" className="mb-4p">
-<<<<<<< HEAD
-                Integration Code
-=======
                 Embed Code
->>>>>>> master
                   <span>Copy & paste a Giving/People form or Resources Widget here</span>
               </label>
               <textarea
