@@ -2,7 +2,7 @@ import React from "react"
 import DisplayForm from "./display_form"
 import DisplayWidget from "./display_widget"
 
-export default class AddIntegrationForm extends React.Component {
+export default class AddEmbedForm extends React.Component {
   constructor(props) {
     super(props)
 
@@ -30,13 +30,13 @@ export default class AddIntegrationForm extends React.Component {
     const handleSubmit = e => {
       e.preventDefault()
       let body = JSON.stringify({
-        integration: {
+        embed: {
           name: this.state.name,
           data: this.state.data,
           app: this.state.app
         }
       })
-      fetch("api/v1/integrations", {
+      fetch("api/v1/embeds", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default class AddIntegrationForm extends React.Component {
         credentials: "same-origin"
       })
         .then(response => {
-          Turbolinks.visit("/integrations", { "action": "replace" })
+          Turbolinks.visit("/embeds", { "action": "replace" })
         })
         .catch(function (error) {
           this.setState({ errors: error })

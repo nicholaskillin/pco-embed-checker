@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   post '/login',   to: 'sessions#create'
 
-  resources :integrations, except: [:create]
+  resources :embeds, except: [:create]
   namespace :api do 
     namespace :v1 do 
-     resources :integrations, only: [:create]
+     resources :embeds, only: [:create]
     end 
   end 
 end

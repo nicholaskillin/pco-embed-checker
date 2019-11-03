@@ -24,12 +24,12 @@ export default class DisplayWidget extends React.Component {
 		const { name } = this.props
 
 		return (
-			<div className="integration-details">
+			<div className="embed-details">
 				<div className="d-f ai-c jc-fs mb-2">
-					<div className="p-r mr-4p" style={{top: 3}}>
-	          <ReactSVG src={ResourcesBadge} />
-	        </div>
-					
+					<div className="p-r mr-4p" style={{ top: 3 }}>
+						<ReactSVG src={ResourcesBadge} />
+					</div>
+
 					<h2>{name}</h2>
 				</div>
 

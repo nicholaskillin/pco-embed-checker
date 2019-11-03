@@ -11,7 +11,7 @@ export default function DisplayForm(props) {
 	const url = data.replace(/\s/g, '')
 
 	return (
-		<div className="integration-details d-f fd-c fd-r@md jc-sb@md ai-c@md">
+		<div className="embed-details d-f fd-c fd-r@md jc-sb@md ai-c@md">
 			<Helmet
 				script={[
 					{
