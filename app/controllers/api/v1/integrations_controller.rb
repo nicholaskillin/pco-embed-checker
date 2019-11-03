@@ -3,7 +3,7 @@ class Api::V1::IntegrationsController < ApplicationController
   def create
     @integration = current_user.integrations.build(integration_params)
     if @integration.save
-      flash[:success] = "Integration succesfully created."
+      flash[:success] = "Embed succesfully created."
       render json: @integration
     else
       render json: { :errors => @integration.errors.full_messages }
