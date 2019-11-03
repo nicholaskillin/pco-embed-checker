@@ -47,7 +47,7 @@ gem 'bcrypt'
 
 # CSS library
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 
 # Needed this to test the login flash messages.
 gem 'rails-controller-testing'
