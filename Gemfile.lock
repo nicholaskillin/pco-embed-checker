@@ -278,7 +278,11 @@ DEPENDENCIES
   omniauth-oauth2
   pg
   pry
+<<<<<<< HEAD
   puma (~> 3.12)
+=======
+  puma (~> 3.12.2)
+>>>>>>> master
   rails (~> 5.2.2)
   rails-controller-testing
   react-rails
