@@ -1,27 +1,27 @@
 {
-  "application.js": "/packs/js/application-a7d31769ffcb9f88f722.js",
-  "application.js.map": "/packs/js/application-a7d31769ffcb9f88f722.js.map",
+  "application.js": "/packs/js/application-7253b76141201d27e6ae.js",
+  "application.js.map": "/packs/js/application-7253b76141201d27e6ae.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-a7d31769ffcb9f88f722.js"
+        "/packs/js/application-7253b76141201d27e6ae.js"
       ],
       "js.map": [
-        "/packs/js/application-a7d31769ffcb9f88f722.js.map"
+        "/packs/js/application-7253b76141201d27e6ae.js.map"
       ]
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-85437f04ddca10cc6e1b.js"
+        "/packs/js/server_rendering-ce10e3c50ce3434b3421.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-85437f04ddca10cc6e1b.js.map"
+        "/packs/js/server_rendering-ce10e3c50ce3434b3421.js.map"
       ]
     }
   },
   "media/images/giving.svg": "/packs/media/images/giving-8a4f2244.svg",
   "media/images/people.svg": "/packs/media/images/people-321397f7.svg",
   "media/images/resources.svg": "/packs/media/images/resources-f17780c7.svg",
-  "server_rendering.js": "/packs/js/server_rendering-85437f04ddca10cc6e1b.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-85437f04ddca10cc6e1b.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-ce10e3c50ce3434b3421.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-ce10e3c50ce3434b3421.js.map"
 }

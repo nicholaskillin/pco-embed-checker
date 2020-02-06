@@ -72,8 +72,8 @@ export default class AddEmbedForm extends React.Component {
         this.setState({ app: "giving", error: false })
       } else if (dataArray[2] === "people") {
         this.setState({ app: "people", error: false })
-      } else if (dataArray[5].includes("resources")) {
-        this.setState({ app: "resources", error: false })
+      } else if (dataArray[1].includes("calendar")) {
+        this.setState({ app: "calendar", error: false })
       } else {
         this.setState({ app: "", error: true })
       }
@@ -99,7 +99,7 @@ export default class AddEmbedForm extends React.Component {
             <div className="d-f fd-c">
               <label htmlFor="data" className="mb-4p">
                 Embed Code
-                  <span>Copy & paste a Giving/People form or Resources Widget here</span>
+                  <span>Copy & paste a Giving/People form or Calendar Widget here</span>
               </label>
               <textarea
                 name="data"
