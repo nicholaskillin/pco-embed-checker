@@ -72,7 +72,7 @@ export default class AddEmbedForm extends React.Component {
         this.setState({ app: "giving", error: false })
       } else if (dataArray[2] === "people") {
         this.setState({ app: "people", error: false })
-      } else if (dataArray[1].includes("calendar")) {
+      } else if (dataArray[0].includes("calendar")) {
         this.setState({ app: "calendar", error: false })
       } else {
         this.setState({ app: "", error: true })
@@ -129,7 +129,7 @@ export default class AddEmbedForm extends React.Component {
           <DisplayForm data={data} app={app} name={name} />
         )}
 
-        {app === 'resources' && <DisplayWidget data={data} name={name} />}
+        {app === 'calendar' && <DisplayWidget data={data} name={name} />}
 
         {(app != "" && !hasInitialState) && (
           <div>
