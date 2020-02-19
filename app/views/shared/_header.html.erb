@@ -6,8 +6,8 @@
 	<% if logged_in? %>
 		<nav class="d-f fd-c fd-r@sm ai-c@sm jc-fs jc-sb@sm">
 			<div class="d-if jc-c jc-fs@sm my-1 pb-1 my-0@sm p-0@sm">
-				<%= link_to "Create New", "/", class: "mr-1" %>
-				<%= link_to "My  Saved Embeds", "/embeds" %>
+				<%= link_to "Create New", root_path, class: "mr-1", rel: current_route?(root_path) %>
+				<%= link_to "My  Saved Embeds", embeds_path, rel: current_route?(embeds_path) %>
 			</div>
 
 			<div class="d-if jc-c jc-fs@sm mb-1 m-0@sm">

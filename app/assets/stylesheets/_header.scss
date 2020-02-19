@@ -26,11 +26,11 @@ nav {
 
     &:hover,
     &.selected {
-      background-color: rgba($gray_700, .25);
+      color: $gray_50;
     }
 
-    &:hover {
-      color: $gray_50;
+    &[rel="active_route"] {
+      background-color: rgba($gray_700, .25);
     }
   }
 }
