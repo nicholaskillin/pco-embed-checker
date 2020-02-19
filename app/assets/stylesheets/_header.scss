@@ -4,6 +4,12 @@ header {
   background: $royal_blue;
   background: linear-gradient(180deg, $royal_blue 0%, $azure 100%);
   margin-bottom: .5em;
+
+  svg {
+    display: inline-block;
+    width: 300px;
+    max-width: 70%;
+  }
 }
 
 nav {
