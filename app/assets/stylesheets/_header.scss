@@ -4,6 +4,12 @@ header {
   background: $royal_blue;
   background: linear-gradient(180deg, $royal_blue 0%, $azure 100%);
   margin-bottom: .5em;
+
+  svg {
+    display: inline-block;
+    width: 300px;
+    max-width: 70%;
+  }
 }
 
 nav {
@@ -20,11 +26,11 @@ nav {
 
     &:hover,
     &.selected {
-      background-color: rgba($gray_700, .25);
+      color: $gray_50;
     }
 
-    &:hover {
-      color: $gray_50;
+    &[rel="active_route"] {
+      background-color: rgba($gray_700, .25);
     }
   }
 }

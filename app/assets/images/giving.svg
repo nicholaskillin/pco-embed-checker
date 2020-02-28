@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="giving-badge" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<style type="text/css">
-	.giving0{fill:#F4C551;}
-	.giving1{fill:#FFFFFF;}
-</style>
-<g>
-	<path class="giving0" d="M256,6C156,6,93.5,18.5,56,56S6,156,6,256c0,100,12.5,162.5,50,200s100,50,200,50c100,0,162.5-12.5,200-50
-		s50-100,50-200c0-100-12.5-162.5-50-200S356,6,256,6z"/>
-	<path class="giving1" d="M263.4,350.8c-2.3,1.6-4.9,2.4-7.4,2.4s-5.2-0.8-7.4-2.4c-15.8-11.2-53.4-39.4-78.5-72.2s-37.7-70.1-3.6-99.4
-		c11.7-10.1,26.4-14.2,41-13.1s28.9,7.4,39.8,18.3l4.4,4.4l4.4,4.4l4.4-4.4l4.4-4.4c10.9-10.9,25.2-17.2,39.8-18.3s29.3,3.1,41,13.1
-		c34.1,29.3,21.5,66.6-3.6,99.4S279.3,339.6,263.4,350.8z"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="linear-gradient--giving" x1="0.5" y1="32.658" x2="31.5" y2="32.658" gradientTransform="matrix(1, 0, 0, -1, 0, 48.658)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f5c426"/>
+      <stop offset="1" stop-color="#f2b327"/>
+    </linearGradient>
+  </defs>
+  <title>giving-app-color</title>
+  <g>
+    <path d="M31.5,16c0,12.4-3.1,15.5-15.5,15.5S.5,28.4.5,16,3.6.5,16,.5,31.5,3.6,31.5,16Z" fill="url(#linear-gradient--giving)"/>
+    <path d="M16.461,21.657a.79.79,0,0,1-.922,0c-1.961-1.383-9.318-7-5.09-10.641a3.716,3.716,0,0,1,5.007.318l.543.543.543-.543a3.716,3.716,0,0,1,5.007-.318C25.779,14.658,18.422,20.274,16.461,21.657Z" fill="#fff"/>
+  </g>
 </svg>
